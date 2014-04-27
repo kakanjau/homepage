@@ -1,7 +1,8 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+  // 加载头文件
+  include includes/head
+body
+  include includes/header
+  block content
+  include includes/footer

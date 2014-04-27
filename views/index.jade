@@ -1,5 +1,7 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(ng-app='test1')
+    div(ng-controller='t1')
+      p {{name}}
+  script(src='/js/test.js')
