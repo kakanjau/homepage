@@ -1,3 +1,14 @@
 //
    Created by qiaoliang on 14-4-29.
 
+extends ../layout
+block scripts
+    script(src='/js/modules/blog/blog_main.js')
+    script(src='/js/modules/blog/blog_index.js')
+
+block content
+    .row-fluid
+        .container
+            div(ng-app='blog_main').col-lg-10
+                div(ng-view)
+            div.col-lg-2
