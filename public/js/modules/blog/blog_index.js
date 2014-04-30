@@ -5,15 +5,8 @@
 var blog_index = angular.module('blog_index', []);
 
 
-blog_index.controller('list', ['$scope', function($scope){
-    $scope.blogList = [];
-    for(var i=0; i<5; i++){
-        $scope.blogList.push( {id: i,
-            name: 'my ' + i + ' blog!',
-            intro: 'this is my  ' + i + ' blog, haha!',
-            create_time: Date(),
-            update_time: Date(),
-            safari_count: i
-        });
-    }
+blog_index.controller('list', ['$scope', '$http', function($scope, $http){
+    $http.get('/blog_list').success(function(data){
+        $scope.blogList = eval(data);
+    });
 }])

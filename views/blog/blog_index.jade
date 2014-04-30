@@ -5,10 +5,11 @@ extends ../layout
 block scripts
     script(src='/js/modules/blog/blog_main.js')
     script(src='/js/modules/blog/blog_index.js')
+    script(src='/js/modules/blog/blog_detail.js')
 
 block content
     .row-fluid
         .container
-            div(ng-app='blog_main').col-lg-10
+            div(ng-app='blog_main').col-lg-8
                 div(ng-view)
             div.col-lg-2

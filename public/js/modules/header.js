@@ -1,4 +1,9 @@
 /**
  * Created by qiaoliang on 14-4-26.
  */
-'use strict'
+
+var header = angular.module('header', []);
+
+header.controller('header_navigation', ['$scope', function($scope){
+//	$scope.active = '.active';
+}])
