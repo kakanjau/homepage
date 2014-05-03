@@ -1,0 +1,26 @@
+//
+    Created by qiaoliang on 14-5-3.
+    博客页面侧边栏内容
+div(ng-controller='aside').panel
+    #blog_category.panel-default(ng-init="blogCategory = #{JSON.stringify(blogCategory)}")
+        .panel-heading
+            文章分类
+        .panel-body
+            ul.list-unstyled(ng-repeat="cate in blogCategory")
+                li.text-overflow
+                    a(href='#') {{cate.cateName}}
+    #blog_read_hot.panel-default(ng-init="blogReadHot = #{JSON.stringify(blogReadHot)}")
+        .panel-heading
+            阅读排行
+        .panel-body
+            ul.list-unstyled(ng-repeat="read in blogReadHot")
+                li.text-overflow
+                    a(href='#') {{read.blogName}}
+
+    #blog_discuss_hot.panel-default(ng-init="blogDiscussHot = #{JSON.stringify(blogDiscussHot)}")
+        .panel-heading
+            评论排行
+        .panel-body
+            ul.list-unstyled(ng-repeat="discuss in blogDiscussHot")
+                li.text-overflow
+                    a(href='#') {{discuss.blogName}}

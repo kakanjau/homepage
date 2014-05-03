@@ -1,21 +1,21 @@
 <a name="1570"/>
 
 <div><div><br/><div style="font-size: 16px"><div style="font-size:100%;"><div style="font-size:13px;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);font-style:normal;font-variant:normal;font-weight:normal;line-height:21px;font-family:Arial, sans-serif;"><div style="font-size:100%;background-color:rgb(255, 255, 255);"><div style="font-size:100%;"><div style="font-size:100%;">
-	
-	
+
+
 	<div style="border:0px;margin:0px;padding:0px;font-size:100%;">
-	
-				
+
+
 		<h1 style="border:0px;margin:-5px 0px 10px;padding:0px;font-size:22px;font-weight:normal;font-style:normal;font-variant:normal;line-height:30px;font-family:Arial, sans-serif;padding-bottom:10px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(232, 232, 232);text-align:center;">@拔赤：前端开发十日谈</h1>
-		
-							
+
+
 	</div>
-	
-	
-	
+
+
+
 	<div style="border:0px;margin:0px;padding:0px;font-size:12px;text-transform:uppercase;color:rgb(153, 153, 153);border-bottom-width:1px;border-bottom-style:dotted;border-bottom-color:rgb(232, 232, 232);margin-bottom:20px;padding-bottom:30px;">
-	
-		<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:5px;">2012/08/09 | 分类： <a href="http://blog.jobbole.com/category/programmer/" rel="category tag" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);" title="查看 开发 中的全部文章">开发</a> | <a href="http://blog.jobbole.com/25114/#comments" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);" title="《@拔赤：前端开发十日谈》上的评论">2  条评论</a> 
+
+		<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:5px;">2012/08/09 | 分类： <a href="http://blog.jobbole.com/category/programmer/" rel="category tag" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);" title="查看 开发 中的全部文章">开发</a> | <a href="http://blog.jobbole.com/25114/#comments" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);" title="《@拔赤：前端开发十日谈》上的评论">2  条评论</a>
 
 
 		 | 标签： <a href="http://blog.jobbole.com/tag/web%e5%bc%80%e5%8f%91/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);">Web开发</a>, <a href="http://blog.jobbole.com/tag/%e5%89%8d%e7%ab%af%e5%b7%a5%e7%a8%8b%e5%b8%88/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);">前端工程师</a>, <a href="http://blog.jobbole.com/tag/%e5%89%8d%e7%ab%af%e5%bc%80%e5%8f%91/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);">前端开发</a>, <a href="http://blog.jobbole.com/tag/%e8%81%8c%e5%9c%ba/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(153, 153, 153);">职场</a></p>
@@ -37,15 +37,15 @@
 
 
 	</div>
-	
 
-	
+
+
 	<div style="border:0px;margin:0px;padding:0px;font-size:14px;">
-					
-		
 
 
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;"><a href="http://hi.baidu.com/lijing00333/item/1c28309d8b46c7d41e427118" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank">拔赤</a> 按：</strong>一直想写这篇“十日谈”，聊聊我对Web前端开发的体会，顺便解答下周围不少人的困惑和迷惘。我不打算聊太多技术，我想，通过技术的历练，得到的反思应当更重要。</p>
+
+
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;"><a href="http://hi.baidu.com/lijing00333/item/1c28309d8b46c7d41e427118" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank">拔赤</a>?按：</strong>一直想写这篇“十日谈”，聊聊我对Web前端开发的体会，顺便解答下周围不少人的困惑和迷惘。我不打算聊太多技术，我想，通过技术的历练，得到的反思应当更重要。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">我一直认为自己是“初级”前端开发工程师，一方面我入道尚浅，只有短短几年，另一方面我自知对技术的钻研并不深入，可能是由于环境的原因，当然最重要的是，我幸运的参与到互联网崛起的<span style="border:0px;margin:0px;padding:0px;font-size:100%;"><a href="http://www.amazon.cn/gp/product/B005DSK504/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=vastwork-23&linkCode=as2&camp=536&creative=3200&creativeASIN=B005DSK504" rel="nofollow" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank" title="浪潮之巅">浪潮之巅</a></span>。时势造就了一批技能薄弱但备受追捧的“弄潮者”，这在很大程度上影响我们对“技术本质”的洞察力，多年来也一直未有成体系的“前端技术”布道佳作，以至于当下多数人对前端技术的了解，盖始于表述并不严谨的岗位招聘描述，而这正恰恰反映了Web前端开发对自身的模糊定位。对于很多Web前端工程师来说，初尝禁果的快感无法持续很久，就陷入一轮又一轮的迷惘，思索自己的职业规划，试图寻找到适合自己的成长道路、看清自身技能的瓶颈，寻找突破。但遗憾的是，Web前端技术被广泛接纳时日尚短，没有多少励志的成功样板可供遵循。然而情况不总是这么糟，毕竟Web前端技术是一门“技术”，和计算机科学系出同门，只是因为互联网的高速崛起而被蒙上了迷雾，遮住了双眼，让我们傻傻看不清时局。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">那么，如何定义Web前端技术岗位边界？Web前端技术的价值体现在何处？前端工程师的价值仅仅体现在物以稀为贵吗？前端工程师的初级、中级、高级和专家之间到底如何界定？当前“我”处在什么位置？接下来的路子应当怎样走？何谓前端技术之“道”？我想多数人都思考过这些问题，本篇“十日谈”里的观点可能有些偏激，但抛砖引玉，读者权且把这些言论当作一个引子吧。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;">第一日：初尝禁果</strong></p>
@@ -62,18 +62,18 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">除了意识问题，另一方面是技术问题，即文笔。这也是工程师最瞧不上眼的问题，难以置信这竟然是阻碍工程师突破瓶颈的关键所在。我已看到过数不清的人在晋升这道关卡吃了大亏，很多工程师技术实力很强，但就是表达不出来，要么罗列一大堆信息毫无重点、要么毫无趣味的讲代码细节，不知云云。除非你走狗屎运碰到一个懂技术的老板，否则真的没办法逃脱码农的宿命。但大部分人还振振有词不以为然。而在Web前端开发领域情况更甚。前端工程师是最喜欢搞<span style="border:0px;margin:0px;padding:0px;font-size:100%;"><a href="http://www.amazon.cn/gp/product/B003BY6PLK/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=vastwork-23&linkCode=as2&camp=536&creative=3200&creativeASIN=B003BY6PLK" rel="nofollow" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank" title="重构:改善既有代码的设计">重构</a></span>的，但在快节奏的需求面前，你很难用“提高了可维护性”、“提升了性能”这类虚无缥缈的词藻为自己争取到时间来搞重构，说的露骨一点，可能你真的对某次重构带来的实际价值无法量化，只是“感觉代码更整洁了”而已。我会在下文的“伪架构”中会展开分析前端工程师的这种浮躁献媚的技术情结。而这正是前端工程师最欠缺的素质之一：用数据说话，用严谨科学的论据来支撑你的观点，老板不傻，有价值的东西当然会让你去做。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">当然，情况不总是这么糟糕，我们看到中文社区中已经锻炼出了很多写手，他们在用高质量的文字推销自己的技术理念，这是一个好兆头，好的文笔是可以锻炼出来的。而在职场，特别是对前端工程师这个特殊职位来讲，这种基本技能可以帮你反思梳理需求的轻重缓急，从凌乱的需求中把握七寸所在。因为当你开始认真写一封邮件的时候，这种思考已经包含其中了。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">所以，雅虎技术的推销是相对成功和远播的。关键在于两方面，扎实的技术功底和高超的写手。而真正的技术大牛一定是集两者与一身，不仅钻研剑道，还能产出秘籍。这也是Yahoo!优雅的学院派气息的动力源泉。国内很多技术团体想在这方面有所建树，应当首先想清楚这一点。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【规范的破与立 1】</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【规范的破与立?1】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">雅虎的技术运作非常规范，刚才已经提到，包括技术、组织、文化，一切看起来有模有样，也堪称标杆，自然成了国内很多技术团队和社区的效仿对象。一时间各种“规范“成风、各色“标准“大行其道，结果是质量参差不齐。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">我们到底需要什么样的规范？雅虎的技术规范到底有何种魔力？以何种思路构建的规范才是货真价实的？规范有着怎样的生命周期？想清楚这些问题，能很大程度减轻很多Web前端工程师的思想负担，看清一部分技术本质，避免盲目跟风。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">我们的确需要规范，但好的规范一定是务实的，一定是“解决问题“的。比如针对项目构建的DPL可以收纳公用的视觉元件以减少重复开发、规定某OPOA项目的事件分发原则以确立增量开发的代码惯性。反之，糟糕的规范却显得过于“抽象“，比如页面性能指标、响应式设计原则。另外，尽管他山之石可以攻玉，但拿来主义有一个大前提，就是你了解你的项目的关键问题，你要优先解决的是些关键问题，而外来规范正好能解决你的问题。因此规范是一本案头手册，是一揽子问题的解决方案，应当是“字典”，而不是“教程“。可见规范的源头是“问题”。所以，当你想用<span style="border:0px;margin:0px;padding:0px;font-size:100%;"><a href="http://blog.jobbole.com/29190" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank" title="初步了解 CoffeeScript">CoffeeScript</a></span>重构你的项目时、当你想引入CommonJS规范时、当你想在页面中揉进<span style="border:0px;margin:0px;padding:0px;font-size:100%;"><a href="http://blog.jobbole.com/53961/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank" title="利用 Bootstrap 进行快速 Web 开发">BootStrap</a></span>时、当你打算重复造轮子搞一套JS库时、当你想重写一套assets打包工具时，想想这些东东解决了你的什么问题？会不会带来新的问题、把事情搞复杂了？还是为了尝鲜？或者为了在简历中堂而皇之的写上使用并精通各种新技术？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">规范之立应当有动因，动因来源于项目需求，项目需求则来自对产品的理解和把握，这是Web前端初级工程师走向中级甚至高级的一次重要蜕变，软件工程领域早就有“架构师”角色，而架构师往往存在于项目需求分析和概设、详设阶段。我看到的情况是，Web前端工程师的思维过多的限制在“界面”之内，向前和产品需求离的太远（认为这是视觉设计师的事）、向后和数据逻辑又隔离开来（认为这是后台工程师该干的事），因此前端规范也大都泛泛，无关项目痛痒，成了玩具。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">雅虎技术规范的优秀之初在于它们解决问题。所以，学习使用规范应当多问一句，“他们为什么这样做？”其实，想清楚这些问题时，脑海中自然形成了一种“遇山开山”的创造性思维。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【规范的破与立 2】</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【规范的破与立?2】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">如果说新技术的尝鲜缺少针对性，但至少满足程序员的某种洁癖和快感，那么“负担”从何而来呢？对于初学者来说，有价值学习资料可能只有这些规范，如果说规范价值不大，那又当从何入手呢？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">刚才我说的不是依赖于规范，而是对规范的反思，摆脱规范灌输给我们所思维定势。新人们大概是看了Wiki中的很多指标、结论、实践，在做项目之初就附加了不少“八股式”的负担，甚至影响我们对项目关键需求和关键问题的洞察力和判断力，负担过重就无法轻装上阵，Wiki中提到的这些指标和规范是结论性的，是大量的实践之后得出的，也只有经历过大量实践才会真正理解这些结论，比如DomReady时间和http请求数是否有因果关系，http请求数增加是否真的会导致页面性能下降，什么条件下会导致性能下降？我们从那些条文和结论中无法找到答案。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">举个具体的例子，Kissy刚刚出了DPL，也是一大堆结论，比如他的布局就采用了经典的双飞翼，使用容器浮动来实现，那么，这种做法就是不可撼动的“标准”吗？看看淘宝车险首页，布局容器齐刷刷的inline-block，只要顶层容器去掉宽度，布局容器自身就能根据浏览器宽度调整自然水平/垂直排列，轻易的适应终端宽度了。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">再比如，淘宝旅行计划项目中的部署方式，也没有完全使用Loader管理依赖，而是将依赖层级做的很少，业务逻辑使用脚本来合并，这样就可以更容易在build环节加入语法检查和代码风格检查。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">类似这种摆脱原有编程思维，有针对性的用新思路新方法解决问题的做法显然让人感觉更加清爽，编程的乐趣也正体现在打破常规的快感之中，小马曾经说过：“制造规范是为了打破规范”，万不要因为这些规范标准加重负担，导致开始作一个简单页面时也显得缩手缩脚，无法放开身手。大胆的动手实践，才能真正得出属于自己的“结论 “和“标准“，才会真正深刻理解那些“结论”的意义所在。代码写的多了，自然熟能生巧，也容易形成成熟的技术观点。</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">类似这种摆脱原有编程思维，有针对性的用新思路新方法解决问题的做法显然让人感觉更加清爽，编程的乐趣也正体现在打破常规的快感之中，小马曾经说过：“制造规范是为了打破规范”，万不要因为这些规范标准加重负担，导致开始作一个简单页面时也显得缩手缩脚，无法放开身手。大胆的动手实践，才能真正得出属于自己的“结论?“和“标准“，才会真正深刻理解那些“结论”的意义所在。代码写的多了，自然熟能生巧，也容易形成成熟的技术观点。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">在这个过程中，我们唯一的对手是懒惰，惰于思考，就无法真正发现问题，自然形不成自己的观点。还是那句话，任何规范、方法、结论、实践都是为了解决项目中的问题的，所以，我们所接触到那些看似“八股文”式的规范标准也是为了解决某些问题而提出的，想清楚这些问题，理解方法论背后的“因“，内心自然有“果”。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">因此，“着眼当下、对症下药”的品质就显得弥足珍贵了，比如，双飞翼布局方法是为了解决一套（html）代码适应多种布局设计，这里的布局相对于固定的产品来说也是固定的，而无针对终端的自适应（适用于移动端的榻榻米布局似乎还没有最佳实践）。这是双飞翼产生的背景，如今终端环境较之5年前已经翻天覆地，问题早已不在“多种布局”上，而在“终端适应“上，这才是我们面临的问题，需要我们给出新的技术方案。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">所以，勤于思考，轻装上阵，大胆实践，勇于创新，发掘问题所在，实打实的解决（潜在）问题，这才是我们真正需要的能力。放下思维定势枷锁，也会有一种豁然开朗的感觉。</p>
@@ -91,13 +91,13 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">那么，转行作前端的人又当如何呢？其实发展轨迹和科班秀才们非常类似，只是时间跨度可能会长一些，你要花更多的精力、作更多的项目、更多的反思和总结才能理解某个知识点的本质（比如HTTP协议）。当然这只是一般情况。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">此外，这些人还需要摆脱很多思维定势的禁锢。这里我推荐大家阅读阿当的《<span style="border:0px;margin:0px;padding:0px;font-size:100%;"><a href="http://www.amazon.cn/gp/product/B003U8XUKQ/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=vastwork-23&linkCode=as2&camp=536&creative=3200&creativeASIN=B003U8XUKQ" rel="nofollow" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank" title="Web前端开发修炼之道">Web前端开发修炼之道</a></span>》。当然，如果你有一个靠谱的师兄带你入道，自然幸运万倍。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">但不管怎样，我始终认为应当秉承兴趣第一的原则，不管你是误打误撞、还是意欲为之，不管你是科班秀才、还是半路出家，兴趣始终应当是第一原则，然后才是你“想做好“。我对自己的要求无法强加于人，所以很多业界大牛在回顾自己成功之路时，提到最多的是：“热爱你的工作、拥抱它给你带来的挑战”。N.C.Zakas曾经这样勉励大家：</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">“我对Web开发人员最大的建议就是：热爱你的工作。热爱跨浏览器开发带来的挑战、热爱互联网技术的种种异端，热爱业内的同行，热爱你的工 具。互联网发展太快了，如果你不热爱它的话，不可能跟上它的步伐。这意味着你必须多阅读，多动手，保证自己的才能与日俱增。下了班也不能闲着，要做一些对自己有用的 事儿。可以参与一些开源软件的开发，读读好书，看看牛人的博客。经常参加一些会议，看看别人都在干什么。要想让自己快速成长，有很多事儿可以去做，而且付出一定会有回报。“</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">“我对Web开发人员最大的建议就是：热爱你的工作。热爱跨浏览器开发带来的挑战、热爱互联网技术的种种异端，热爱业内的同行，热爱你的工?具。互联网发展太快了，如果你不热爱它的话，不可能跟上它的步伐。这意味着你必须多阅读，多动手，保证自己的才能与日俱增。下了班也不能闲着，要做一些对自己有用的?事儿。可以参与一些开源软件的开发，读读好书，看看牛人的博客。经常参加一些会议，看看别人都在干什么。要想让自己快速成长，有很多事儿可以去做，而且付出一定会有回报。“</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;">第三日，幸福感</strong></p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【先精通十行？！】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">兴趣第一，听上去很美，但现实却不总是这么酷。练就了一身本领，那也要找到对口的怪物来打一打才过瘾。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">自然，每个人都想做出好东西，每个工程师也都渴求这样的机遇，用层次分明的设计、漂亮优雅的代码、精妙的细节雕琢，做出美观、安全、实用耐用的产品，不过现实是如此残酷，以至于工程师们一直都缺乏对产品的归属感。作为前端工程师，如何才能在江湖中把握住前进方向、步步走高？毕竟，在职位繁杂的大公司，缺乏人性化的工作流程影响着工程师的工作幸福感。产品从设计之初、到技术方案评审、再到实现，处处充满了妥协，大部分产品都是杂交的产物，人与人相互掣肘，每个人都对产品不满意……，大跃进式的敏捷开发早就被证明百害无一利。但，或许这就是成长的代价。年轻的工程师需要更多的了解需求和设计、产品经理更要懂得软件迭代规律。对于前端工程师来讲更是如此，多学习交互设计和UI，多了解网络协议和软件迭代模型，更能帮助前端工程师和需求方沟通、和后台的衔接、以及控制版本的迭代。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">说来奇怪，前端工程师不是写html/css/js的吗，搞懂那些边缘知识有什么用？《Web前端开发修炼之道》中也提到，精通一行需要先精通十行。这里我来解释一下原因。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">作为交互设计师的下游，前端工程师学需要习设计知识是很容易理解的，因为它能帮助你更准确的理解设计师的意图，在原型不完整的时候也能正确的反馈设计缺陷，将问题阻挡在设计的环节，会大大减少UI bug数量，比如说，设计师会给出理想状态下的容器样式，却往往忽略了文字溢出折行、长连续字符、容器宽高是否适应内容尺寸变化而变化，溢出部分是作截字还是隐藏等诸多细节，因为设计师不懂“边界值测试”的道理，而这些问题往往在测试阶段才被发现，所以，如果能在拿到UI设计稿时就提醒设计师补充完整这些场景，自然减少测试回归次数。</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">作为交互设计师的下游，前端工程师学需要习设计知识是很容易理解的，因为它能帮助你更准确的理解设计师的意图，在原型不完整的时候也能正确的反馈设计缺陷，将问题阻挡在设计的环节，会大大减少UI?bug数量，比如说，设计师会给出理想状态下的容器样式，却往往忽略了文字溢出折行、长连续字符、容器宽高是否适应内容尺寸变化而变化，溢出部分是作截字还是隐藏等诸多细节，因为设计师不懂“边界值测试”的道理，而这些问题往往在测试阶段才被发现，所以，如果能在拿到UI设计稿时就提醒设计师补充完整这些场景，自然减少测试回归次数。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">另外，前端工程师必须要了解网络协议，原因很简单，我们作的产品运行在Web上。很多依赖域Ajax的实现，只有前端工程师才会提出实现方案，产品经理不了解技术瓶颈，后台工程师更不会在意客户端的用户体验，举个简单的例子：通过JS实现一个Ajax，如果Ajax抓取的数据源是一个302跳转，则需要在JS程序中多做一些事情，这就需要前端工程师了解一些HTTP协议。应当说，这是很常见的一个场景。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">那么，为什么说前端工程师也要关注代码版本控制呢？因为web开发和软件开发本质无异，同样具有迭代周期，需求不是一揽子提完、一口气开发完的，是有步骤的开发，因此，每次上线开发哪些功能、为后续扩展功能留足哪些接口、代码在可扩展和可维护性上应当作哪些考虑……，这些应当是每个工程师关注的事情，所谓迭代就是指这种需求的叠加，这是软件开发的常态，也是web开发的常态，刚开始，前端工程师总会不断抱怨没完没了的需求，代码起初还算干净，但很快就越来越乱，代码的版本管理对于Web前端工程师来说有些困难，这也使得大部分前端工程师很难上档次，从这个角度讲，前端工程师是需要向后台工程师学习的，他们的开发量不比前端少，维护代码的能力要超过前端工程师。另外，对于刚入行的前端工程师，心态要放对，提需求是产品经理的职责所在，整理出有价值的需求是交互设计师的职责所在，将需求作版本控制分步实现是前端工程师的职责所在，前端工程师没必要去抱怨产品经理提一大堆没规律的需求，而更应当去理解需求缘由，将需求提炼成UC（用例），让需求在自己手中可控制。只是多数前端工程师缺乏提炼、整理需求的能力，一味的在接需求，才会搞的手忙脚乱，带着情绪堆代码。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">所以，只有练就了一身本领，才会更有目标的去寻找对产品的责任感和对团队的归属感，不要误以为能切出漂亮的页面就是能力的提高，纯粹的写代码每个人都差不多的，要成为合格的工程师，眼界要进一步放开，前端工程师能做的，不仅仅是切页面而已，作一个精品项目，一定不乏专业的过程把控，这也是大多数人最易忽略的地方。</p>
@@ -125,7 +125,7 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【误区】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">但是，不要高兴的太早，“技术驱动”是需要大量的积累和经验的。在入行初期，很多人过于着迷与此，从而陷入了迷途。比如有人纠结于是否将dt、dd的样式清除从reset.css中拿掉，原因是觉得这两个标签的清除样式会耗费一些渲染性能；或者是否需要将for循环改为while循环以提高js执行速度。尽管这些考虑看上去是合理的，但并不是性能的瓶颈所在，也就是说，你花了很大力气重构的代码带来的页面性能提升，往往还不如将两个css文件合成一个带来的提升明显。就好比用一把米尺量东西，没必要精确到小数点后10位，因为精确到小数点后2位就已经是不准确的了。这种技术误区常常让人捡了芝麻丢了西瓜。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">话说回来，这里提到的怀疑权威的精神是绝对应当鼓励的，但不应当止于表象，如果怀疑dt的清除样式会对性能带来影响，就应当想办法拿到数据，用事实来证明自己的猜测。数据是不会骗人的。而求证过程本身就是一种能力的锻炼。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【技术驱动】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">说到这里，你大概对“技术驱动”有那么一点点感觉了。身边太多人在抱怨“公司不重视前端”、公司不是技术驱动的、技术没机会推动产品业绩、我的价值得不到体现？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">什么是技术驱动？简单讲，就是技术对业务有积极推动作用。更多的是工程师发起、工程师影响、工程师负责。刚才提到的用数据说话只是一种“驱动”技巧，那么我需要何种数据，数据从哪里来？我来分享一个实际的场景吧。</p>
@@ -138,12 +138,12 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">1，收入低</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">2，工作单调</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">3，工作时间长</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">实际上这个描述非常片面，或者说是外行看热闹。第一，全行业比较来看，软件开发领域收入为中等偏上，第二，程序员一般都是有癖好的，沉浸在自己的癖好中是不会感觉单调的，第三，程序员有一定的时间自由度（如果你是一名合格的程序员的话），至少不会像流水生产线工人一样。其实，通过几十年的发展，我们对程序员的定义更加科学，比如很多IT企业都开始建立详细的JM（Job Module），即职级模型，程序员沿着专业方向可以走到很高，甚至可以说，程序员是可以被当成一生的事业的。</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">实际上这个描述非常片面，或者说是外行看热闹。第一，全行业比较来看，软件开发领域收入为中等偏上，第二，程序员一般都是有癖好的，沉浸在自己的癖好中是不会感觉单调的，第三，程序员有一定的时间自由度（如果你是一名合格的程序员的话），至少不会像流水生产线工人一样。其实，通过几十年的发展，我们对程序员的定义更加科学，比如很多IT企业都开始建立详细的JM（Job?Module），即职级模型，程序员沿着专业方向可以走到很高，甚至可以说，程序员是可以被当成一生的事业的。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">然而，有一个非常普遍的观点是，程序员和做模特一样是吃青春饭的，到了三十岁就要考虑转行或者转管理。尽管这种观点颇具欺骗性，但至少它对一种人是适用的，即入错了行的人。如果你骨子里不想写程序，就算年纪轻轻为了生计写几年代码，之后肯定会另有他途。心非所属则不必勉强，但问题是，即便如此，你知道你的心之所属吗？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">我们知道，一个成熟的产业一定需要各色岗位来支撑，若要成熟，则需要时间的沉淀，比如实体经济制造业，创意、生产线、高级技工、技术管理四个方面都产出大量的高级人才。因为历史悠久，我们能看得到。而软件产业则不然，九成以上是刚出道的新手，并没有太多“高级”和“资深”的具体样板可供参照，在前端开发领域中情况更甚，绝大部分人根本搞不清楚什么样才是“资深”前端工程师，相比传统软件行业近四十年的进化，我不相信仅有几年光景的前端技术岗位能产出多少货真价实的“资深”。但互联网崛起速度太快，还没有等技术基础打牢，互联网形态就又花样翻新了，这种变化是一种常态，而岗位的设定也在这种变化之中自然的优胜劣汰，比如两年前可能还难以想象数据部门会需要前端工程师，他们甚至不直接和浏览器打交道。前端工程师需要适应这种变化带来的观念冲击，不要以为自己只能做切页面、或者只会给页面搞重构、只会搞兼容性，要把自己放在整个软件行业来看。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">所以，由于历史“不悠久”导致的岗位模糊本身不是什么大问题，岗位的演化本身就包含在互联网的发展轨迹之中。所以，当今的互联网IT状况，就好比移动终端的大哥大时代、云计算的肉鸡时代、或者桌面操作系统的DOS时代。因此，前端工程师当前要务是要想清楚看清楚，在互联网中我能做什么，而不是作为前端工程师我能做什么，所以，从这个角度讲，技术是一个工具，放大来看，技术也只是你职业生涯中很小的组成部分，而你的从业积累、和知识面的广度深度才是你随着时间的推移慢慢步入“资深”的原因所在，而不是写了个什么框架就变“资深”了。如果有一天互联网形态固定了，它的岗位可能真正就定型了，才会有真正清晰的职能边界，就像蓝色巨人IBM中的各色岗位一样，边界清晰，权责分明，普通程序员只能实现接口而无机会设计接口、低层级的工程师也无机会跃进式的接触项目架构、技术经理人也不能轻易对产品有决策性影响，到这时，人的能力才真正的被限制在方圆之内，容不得越界，这种环境下人的成长非常缓慢。根本不会有像今天互联网乱局之中所提倡的创新、革命、成长和思想解放。简单讲，一旦产业定型，就不太需要很多“创造”了，更多的是“维护”。所以，我个人宁愿互联网IT“黑暗”的中世纪越久越好，至少对于年轻气盛程序员来说，黑暗的丛林环境才是真正的自然进化最理想的土壤，这时我想起了狄更斯在“双城记”中的开篇。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">“这是最好的时代，这是最坏的时代；这是智慧的时代，这是愚蠢的时代；这是信仰的时期，这是怀疑的时期；这是光明的季节，这是黑暗的季节；这是希望之春，这是失望之冬；人们面前有着各样事物，人们面前一无所有；人们正在直登天堂，人们正在直下地狱”。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【半路出家的危与机】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">然而，不管怎样，信心的树立不是一蹴而就的，对于转行做前端的人来说更是如此。俗话说，隔行入隔山。每个行业自有其道，自然不是想做就做。前端技术领域半路出家者非常多，我们来分析一下转行的心理。第一，看到前端技术入门简单、互联网对前端技术的需求缺口巨大；第二，前端技术所见即所得、感觉学习起来很快；第三，我身边的某某转行作前端看上去不错、我似乎也可以；第四，我不喜欢我现在做的工作、想换行业、正好前端技术上手较快，就选他吧；第五，我真的喜欢作Web前端，为它付出再多都是值得的。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">转行者的心态比较容易走两个极端，一是只看到新行业的好，二是只觉得原工作很糟糕。但不管是什么行业的转行，对自己的职业规划的思考都应当先行一步。即务必首先清晰的回答这些问题：</p>
@@ -165,7 +165,7 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">做分享这事儿真的是一本万利。有心的人一定要逼着自己做分享，而且要做好。首先，自己了解的知识不叫掌握，只有理解并表达出来能让别人理解才叫掌握，比如如果你解释不清楚hasLayout，多半说明自己没理解，如果你搞不懂双飞翼的使用场景，可能真的不知道布局的核心要素。再者，作分享绝对锻炼知识点的提炼能力和表达能力，我们作为工程师不知道多少次和强硬的需求方pk，被击败的一塌糊涂。也反映出工程师很难提炼出通俗易懂的语言将技术要点表述清楚。而做ppt和分享正是锻炼这种能力，将自己的观点提炼出要点和线索，分享次数多了，自然熟能生巧。档次也再慢慢提高。另一方面，逼迫自己站在公众场合里大声讲话，本来就是提高自信的一种锻炼。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">这时，你或许会问，我讲的东西大家都明白，我讲是不是多余，我第一次讲讲不好怎么办，大家会不会像看玩猴似的看我“这SB，讲这么烂还上来讲”？要是讲不好我以后再讲没人听怎么办，我今后怎么做人啊？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">老实说，这是一道坎，任何人都要跨过去的，谁都一样，你敢鼓起勇气在大庭广众之下向爱人表白，就没勇气对自己的职业宿命说不？其实勇敢的跨越这一步，你会意外的收获他人的掌声和赞许，这些掌声和赞许不是送给你所分享的内容，而是送给你的认真和勇气。这个心结过不去，那就老老实实呆在自己的象牙塔里遗老终生，当一辈子工程师里的钻石王老五吧。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【匠人多福】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">如果你能耐心读到这里，心里一定有一个疑问，上面说的都是技术上能力上怎样怎样，那我所做项目不给力又当如何？如果项目不挣钱、黄了、裁了，我的努力不就白费了吗？我又有什么绩效和价值呢？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">没错，有这种想法的人不在少数。特别是刚出道的校招同学往往更加心高气傲，以为自己有改变世界的本事，一定要参与一个牛逼的团队做一款光鲜靓丽受人追捧能给自己脸上贴金的项目。如果你有这种想法，趁早打消掉这个念头，当然，我们这里先不讨论创业的情形。</p>
@@ -177,7 +177,7 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">就我所看到的情形看，一开始加入看似很牛的项目组，三年后得到的成长，比那些开始加入一个不被重视的项目的同学要小很多，而后者在能力上的弹性却更大。所以，道理很简单，你是要把一个很酷的项目作的和之前差不多酷，还是把一个不酷的项目做的很酷？项目是不是因为你的加入而变得与众不同了？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">从这个角度讲，不管是转行的新人还是刚出道的秀才，最好将自己当作“匠人”来对待，你的工作是“打磨”你的项目，并在这个过程中收获经验和成长。付出的是勤奋，锻炼的是手艺，磨练的是心智。因此，你的价值来自于你“活儿“的质量，“活儿”的质量来自于你接手的项目之前和之后的差别。做好活儿是匠人应有的职业心态。想通这一点，内心自然少一些纠结，才会对自己对项目的贡献度有客观的认识，不会感觉被项目所绑架。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">做一名多福的匠人，拥有了金刚钻、就不怕拦不到瓷器活儿。但对于人的成长来说，如果说“项目”重要但不关键，那么什么才是关键呢？这个话题还会在接下来的“伯乐与千里马”这篇中给出答案。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【若干年后】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">现在，让我们回过头回答一下“青春饭”的问题。在“青春饭”小节中提到，“程序员到三十岁之后需要转行或者转管理吗？”</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">上文提到，工业化生产的四个领域，1，创意，2，生产线，3，高级技工，4，技术管理。Web前端技术也是如此，可以在这四个领域找到各自的归宿。</p>
@@ -191,25 +191,25 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">即做技术经理，这才是多数人所理解的“管理”，其实就是带团队、靠团队拿成果。这类人具有敏感的技术情结，在技术风潮中把握方向，能够指导培训新人，为各个业务输出前端人才，偏“教练”型的，促进新技术对业务的影响。并有意识的开辟新的技术领域。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">可见，转管理可不是想当然，也不是所谓做项目变资深了就能转管理，转了也不一定能做好。根据“彼得原理”，即人总是倾向于晋升到他所不能胜任的岗位，这时就又陷入“帕金森”定律所隐喻的恶性循环之中，直到你带的团队整个垮掉。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">所以，转管理应当是一件非常慎重的事情，不是所谓程序员混不下去就转管理这么简单。但不管怎样，有一件事情是需要尤其要想清楚，即，转了管理，技术就丢了吗？我们在第七日“伯乐与千里马”中再深入聊聊这个事儿。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;">第七日，伯乐与千里马</strong></p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【师兄们的抉择 1】</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【师兄们的抉择?1】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">千里马常有，而伯乐不常有。——韩愈，“马说”。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">一个人这辈子能遇到一个好师兄是一种缘分，可遇不可求。很多人工作中的幸福感似乎也源自这种被认同，被师兄的了解和认同，有人能直言不讳的指出你的不足，帮你发现机会，并将最适合你做的事情分配给你，这是莫大的幸运，但如此幸运的人十之一二，大多数人因为缺少伯乐的提点，渐渐辱于“奴隶人之手“，潜力渐失，毁于中庸。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">在前端技术领域，这种情况很普遍也很特殊，当然有很多客观原因。即前端技术进入公众视野时间不长，有实力的伯乐更加是凤毛麟角。更何况，Web前端技术还有着一些江湖气，知识点过于琐碎，技术价值观的博弈也难分伯仲，即全局的系统的知识结构并未成体系，这些因素也客观上影响了“正统“前端技术的沉淀，奇技淫巧被滥用，前端技术知识的传承也过于泛泛，新人难看清时局把握主次，加之业务上的压力，未免过早导致技术动作变形。而这些问题也无法全赖自己全盘消化，若有人指点迷津，情况要好上万倍。因此，前端技术领域，为自己觅得一个靠谱的师兄，重要性要盖过项目、团队、公司、甚至薪水。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">这也是上文所说的“项目不重要，师兄才重要“的原因。说到这里就有一个问题，每个人都问下自己，你是想当师弟呢还是想当师兄呢？当师兄有什么好处呢？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">没错，很多师兄都是被师兄，甚至没有做好当师兄的准备，更进一步说，不少经理人也都是“被经理人“，没有做好准备就被推到了管理岗位。带人是耗精力的，师兄要做很多思想斗争才舍得把这些宝贵的精力放在那些菜鸟身上，这不是一个技术问题，而是一个道德问题。要记住，没有谁应该无缘无故把自己所掌握技能给你倾囊相授，如此皆命也。读到这里，作为菜鸟，作为学徒，作为新人，作为师弟，你做到对这份命运的足够尊重了吗？</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">尊师重教的传统美德并没有在技术领域得以很好的延续。也正因为此，人才梯队难建立起来，但对于师兄来说，却是有更多机遇的。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【师兄们的抉择 2】</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【师兄们的抉择?2】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">作为师兄，不管是主动还是被动，肯定会想当师兄对我有什么提升？对于初次做师兄的人来说，最大的提升在于两方面，1，任务分解，2，问题分析。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">第一，任务分解，作为师兄要给师弟派分任务，就涉及到任务分解，分解这事儿往低了说，就是派活，往高了说，其实就是做“架构”，比如一个页面，按照什么思路进行模块划分，模块划分是否适合单人开发，如何控制共用样式和共用脚本，我需要为他提供什么接口，如何控制他的代码并入整个页面时不会影响整体页面代码的熵值，这些都是实打实的“架构“应该包含的问题，而从小页面开始就做这种锻炼，做的多了，“架构感”自然就形成了。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">第二，问题分析，在之前自己写代码都是单打独斗，什么都是用代码解决问题，但一旦涉及协作，就要强迫自己分析问题，或者说给徒弟分析问题，告诉他应当用什么方法来解决问题，当说到“方法”时，脑子里定形成了一个方案，按照这个方案路子走一定能解决问题。分析问题比写代码要更抽象、更高效，因为在脑子里构建方案要比写代码要快，思考也会更加缜密，当锻炼的多了，思考越来越快，代码的草稿也很快就在脑海中形成了，这也是我们说为什么很多人不写代码但编码思路和水平都很高的原因。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">这些工作方法对了，积累多了，就是提高。对于技术经理人来说，也是同样的道理。所以，就像在第五日的“得与失”部分提到的那样，转身师兄、变身管理并不意味着“失“掉技术饭碗，而是一种进步。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【做自己的伯乐】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">那么，在前端技术领域里什么样的人才算千里马，其实人人都是千里马，人人都可以发掘自己的潜力，如果上面的文字你能读懂，能认可，这种自我发掘已经开始了，没有一个好伯乐又何妨呢？做一个勤快的小码农，少一些势利的纷争，很快会发现，自己才是最好的伯乐。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">但这并不是说，他人对自己的观点不重要，有时甚至要综合各种声音，所以，多找身边的大牛们聊聊天，多找你的师兄和主管，不管他们给你的建议是多么形而上，总有一些声音对你是有益的，多收集，有好处。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;">第八日，做地球上最牛的UED</strong></p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">【谁推动了历史前进，英雄？还是人民？】</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">“做地球上最牛的UED！”，这是淘宝UED创立之初的口号，现在被渐渐淡忘了，因为微博上的一些讨论，又想起了这份曾经美好的初衷。玉伯也感叹道：“这愿景曾吸引了多少好汉前往投奔呀。只可惜短短几年间，这愿景好像越来越远了”。问题是，要做好一个团队，靠的是个人、还是整体？愿景是越来越远了吗？</p>
@@ -226,10 +226,10 @@
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">之前我整理了一下“<a href="http://photo.weibo.com/1700082927/talbum/detail/photo_id/3390565977155118" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank">前端技术知识结构</a>”，罗列的比较散，但也基本表述清楚了我的观点。今年上半年也在整个研发中心组织了一次前端技术培训，对于前端技术的演化规律也有过整理，都放在了<a href="http://ued.taobao.com/blog/2012/04/09/f2e-in-taobao/" style="border:0px;margin:0px;padding:0px;font-size:100%;text-decoration:none;color:rgb(0, 153, 204);" target="_blank">这个ppt</a>中，希望对大家有所帮助。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">概观国内前端技术界，其实我不认为和国外顶尖的前端技术有多少年差别，甚至很多方面都走在了他们前面，比如对IE6暴力式的兼容，以及各种外壳浏览器的风靡（呵呵，开玩笑哈）。唯一的美中不足是国外顶尖的前端技术难第一时间就在国内普及，可能是两方面原因，一是多数人英文底子很差，这可是个大问题啊。二是国内前端技术方面高质量的译文图书实在是少的可怜。那么……</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">接下来的最后一日，想了想还是留给答疑吧，一方面很多人读到这里肯定满肚子问题，我收集下，争取及时回复大家。另一方面，万一上面的话的有得罪人的地方，还好留有余地来补救，哈哈。</p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"> </p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">?</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">ps：一直很喜欢“神曲”的插图，从“天堂篇”里摘出一张作为封面吧，呵呵。</p>
 <p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;"><strong style="border:0px;margin:0px;padding:0px;font-size:100%;font-weight:bold;">第十日：QA</strong></p>
-<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">–EOF –</p>
+<p style="border:0px;margin:0px;padding:0px;font-size:100%;margin-bottom:20px;">–EOF?–</p>
 
 
 <div style="border:0px;margin:0px;padding:0px;font-size:100%;">
@@ -239,7 +239,7 @@
 </div>
 
 
-	
+
 <br/>
 
 

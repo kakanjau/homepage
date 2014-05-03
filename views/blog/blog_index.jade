@@ -1,5 +1,6 @@
 //
    Created by qiaoliang on 14-4-29.
+   博客页面博客列表内容，是博客的主页面
 
 extends ../layout
 block scripts
@@ -9,7 +10,8 @@ block scripts
 
 block content
     .row-fluid
-        .container
-            div(ng-app='blog_main').col-lg-8
+        div(ng-app='blog_main').container
+            .col-lg-8
                 div(ng-view)
-            div.col-lg-2
+            div.col-lg-3
+                include blog_aside

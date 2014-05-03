@@ -1,0 +1,27 @@
+/**
+ * Created by qiaoliang on 14-5-3.
+ */
+/**
+ * 博客功能的数据库模块*/
+
+var fs = require('fs');
+
+var blogBase = function() {
+};
+
+blogBase.prototype.getAsideInfo = function() {
+    var data = fs.readFileSync('./test_data/blog_asideInfo_data.json', {encoding: 'utf8'});
+    return JSON.parse(data);
+};
+
+blogBase.prototype.getBlogList = function() {
+    var data = fs.readFileSync('./test_data/blog_index_data.json', {encoding: 'utf8'});
+    return JSON.parse(data);
+};
+
+blogBase.prototype.getBlogDetail = function(blogId) {
+    var content = fs.readFileSync('./test_data/blog_detail_id' + blogId + '.txt', {encoding: 'utf8'});
+    return content;
+};
+
+module.exports = new blogBase();
