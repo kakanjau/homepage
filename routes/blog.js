@@ -7,7 +7,8 @@ function index(req, res, next) {
 }
 
 function list(req, res, next) {
-    res.send(blogBase.getBlogList());
+    var category = req.params.blogCategory;
+    res.send(blogBase.getBlogList(category));
 }
 
 function detail(req, res, next) {

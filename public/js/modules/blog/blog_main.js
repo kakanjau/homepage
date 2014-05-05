@@ -10,6 +10,10 @@ blogMain.config(['$routeProvider', function($routeProvider){
             templateUrl: 'partials/blog/blog_list.html',
             controller: 'list'
         }).
+        when('/blog_list/:blogCategory', {
+            templateUrl: 'partials/blog/blog_list.html',
+            controller: 'list'           
+        }).
         when('/blog_detail/:blogId', {
             templateUrl: 'partials/blog/blog_detail.html',
             controller: 'detail'

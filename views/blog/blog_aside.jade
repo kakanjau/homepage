@@ -8,14 +8,14 @@ div(ng-controller='aside').panel
         .panel-body
             ul.list-unstyled(ng-repeat="cate in blogCategory")
                 li.text-overflow
-                    a(href='#') {{cate.cateName}}
+                    a(href='#/blog_list/{{cate.cateId}}') {{cate.cateName}}
     #blog_read_hot.panel-default(ng-init="blogReadHot = #{JSON.stringify(blogReadHot)}")
         .panel-heading
             阅读排行
         .panel-body
             ul.list-unstyled(ng-repeat="read in blogReadHot")
                 li.text-overflow
-                    a(href='#') {{read.blogName}}
+                    a(href='#/blog_detail/{{read.blogId}}') {{read.blogName}}
 
     #blog_discuss_hot.panel-default(ng-init="blogDiscussHot = #{JSON.stringify(blogDiscussHot)}")
         .panel-heading
@@ -23,4 +23,4 @@ div(ng-controller='aside').panel
         .panel-body
             ul.list-unstyled(ng-repeat="discuss in blogDiscussHot")
                 li.text-overflow
-                    a(href='#') {{discuss.blogName}}
+                    a(href='#/blog_detail/{{read.blogId}}') {{discuss.blogName}}

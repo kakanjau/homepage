@@ -5,7 +5,9 @@ var blog = require('./blog');
 /* GET home page. */
 router.get('/blog', blog.index);
 
-router.get('/blog_list', blog.list);
+router.get('/blog_list/', blog.list);
+
+router.get('/blog_list/:blogCategory', blog.list);
 
 router.get('/blog_detail/:blogId', blog.detail);
 
