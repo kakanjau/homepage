@@ -15,6 +15,18 @@ footer {
 .blog_content {
   min-height: 600px;
 }
+
+.md_input {
+  width : 100%;
+  margin : 10px 0px 10px 0px
+}
+
+.md_input .title {
+  height : 22px;
+}
+.md_input .content {
+  height : 400px;
+}
 /*
 a {
   color: #00B7FF;

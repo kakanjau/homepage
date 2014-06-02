@@ -2,7 +2,7 @@
  * Created by qiaoliang on 14-4-29.
  */
 
-var blogMain = angular.module('blog_main', ['blog_index', 'blog_detail']);
+var blogMain = angular.module('blog_main', ['blog_index', 'blog_detail', 'blog_editor']);
 
 blogMain.config(['$routeProvider', function($routeProvider){
     $routeProvider.
@@ -17,6 +17,10 @@ blogMain.config(['$routeProvider', function($routeProvider){
         when('/blog_detail/:blogId', {
             templateUrl: 'partials/blog/blog_detail.html',
             controller: 'detail'
+        }).
+        when('/blog_editor', {
+            templateUrl: 'partials/blog/blog_editor.html',
+            controller: 'editor'
         }).
         otherwise({
             redirectTo: '/blog_list'
