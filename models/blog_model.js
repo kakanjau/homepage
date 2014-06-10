@@ -6,6 +6,7 @@
 
 var util = require('util');
 var fs = require('fs');
+var BlogInfo = require('./mongo/blogInfo');
 
 var blogBase = function() {
 };
@@ -15,21 +16,16 @@ blogBase.prototype.getAsideInfo = function() {
     return JSON.parse(data);
 };
 
-blogBase.prototype.getBlogList = function(category) {
-    var blogList = fs.readFileSync('./test_data/blog_index_data.json', {encoding: 'utf8'});
-    blogList = JSON.parse(blogList);
-    var filtList = new Array();
-    console.info('category: ' + category);
-    if(category){
-    	blogList.forEach(function(val, index, array){
-    		if(category == val.category){   
-    			filtList.push(val);
-    		}
-    	});
-    }else{
-    	filtList = blogList;
-    }
-    return filtList;
+blogBase.prototype.getBlogList = function(category, callback) {
+    var filtList = [];
+    BlogInfo.find({}, function(err, docs){
+        if(!err){
+            //console.info(docs);
+            if(callback){
+                callback(docs);
+            }
+        }
+    });
 };
 
 blogBase.prototype.getBlogDetail = function(blogId) {
