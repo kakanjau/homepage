@@ -17,16 +17,15 @@ blogBase.prototype.getAsideInfo = function() {
 };
 
 blogBase.prototype.getBlogList = function(category, callback) {
-    var filtList = [];
-    BlogInfo.find({}, function(err, docs){
-        if(!err){
-            //console.info(docs);
-            if(callback){
-                callback(docs);
-            }
-        }
+    var blogInfo = new BlogInfo();
+    blogInfo.getBlogList({}, function(err, docs){
+        callback(err, docs);
     });
 };
+
+blogBase.prototype.saveBlog = function(blog, callback) {
+
+}
 
 blogBase.prototype.getBlogDetail = function(blogId) {
     var content = fs.readFileSync('./test_data/blog_detail_id' + blogId + '.txt', {encoding: 'utf8'});

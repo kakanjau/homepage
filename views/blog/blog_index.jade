@@ -5,23 +5,15 @@
 extends ../layout
 block scripts
     script(src='/lib/showdown.js')
-    script(src='/js/modules/blog/blog_main.js')
-    script(src='/js/modules/blog/blog_index.js')
-    script(src='/js/modules/blog/blog_detail.js')
-    script(src='/js/modules/blog/blog_editor.js')
 
 block content
     .row-fluid
-        div(ng-app='blog_main').container
+        div.container
             div
                 .col-lg-8
-                    .btn-group
-                        a(href='#/blog_editor').btn.btn-default
-                            span.glyphicon.glyphicon-edit
-                        a.btn.btn-default
-                            span.glyphicon.glyphicon-wrench
-                        a.btn.btn-default
-                            span.glyphicon.glyphicon-user
-                    div(ng-view)
-                div.col-lg-3
+                    if blogType == 'list'
+                        include blog_list
+                    else
+                        include blog_detail
+                .col-lg-3
                     include blog_aside

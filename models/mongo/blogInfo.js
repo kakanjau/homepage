@@ -16,4 +16,8 @@ var bloglist = new Schema({
     safari_count : String
 });
 
+bloglist.methods.getBlogList = function(condition, callback){
+    return this.model('bloglist').find(condition, callback);
+};
+
 module.exports = mongoose.model('bloglist', bloglist);
