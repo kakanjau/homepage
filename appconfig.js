@@ -11,5 +11,7 @@ module.exports = {
     dbconfig : {
         connect : 'mongodb://localhost/',
         schema : 'homepage'
-    }
+    },
+
+    DATA_FILE_PATH : 'F:/GitHub/homepage/test_data'
 };

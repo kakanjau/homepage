@@ -6,7 +6,7 @@ var blog = require('./blog');
 router.get(/^\/blog[\/]?/, blog.aside);
 router.get('/blog/:blogCategory?', blog.list);
 
-router.get('/blog/blog_detail/:blogId', blog.detail);
+router.get('/blog/blog_detail/:_id', blog.detail);
 
 router.get('/todo', function(req, res) {
   var data = {

@@ -3,7 +3,7 @@ var blogBase = require('../models/blog_model');
 
 function aside(req, res, next) {
     res.data = res.data || {};
-    res.data.aside = blogBase.getAsideInfo();;
+    res.data.aside = blogBase.getAsideInfo();
     return next();
 }
 
@@ -18,16 +18,19 @@ function list(req, res, next) {
 }
 
 function detail(req, res, next) {
-    var id = req.params.blogId;
-    var content = blogBase.getBlogDetail(id);
-    res.data = res.data || {};
-    res.data.blogType = 'detail';
-    res.data.blogDetail = {
-        id: id,
-        name: '前端开发十日谈',
-        content: content
-    };
-    res.render('blog/blog_index', res.data);
+    var id = req.params._id;
+    blogBase.getBlogDetail(id, function(err, doc){
+        if(err || !doc){
+            var err = new Error('Not Found');
+            err.status = 404;
+            next(err);
+        }
+        res.data = res.data || {};
+        res.data.blogType = 'detail';
+        res.data.blogDetail = doc;
+        res.render('blog/blog_index', res.data);
+    });
+
 }
 /*
 function save(req, res, next) {

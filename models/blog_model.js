@@ -7,6 +7,7 @@
 var util = require('util');
 var fs = require('fs');
 var BlogInfo = require('./mongo/blogInfo');
+var config = require('../appconfig');
 
 var blogBase = function() {
 };
@@ -27,9 +28,17 @@ blogBase.prototype.saveBlog = function(blog, callback) {
 
 }
 
-blogBase.prototype.getBlogDetail = function(blogId) {
-    var content = fs.readFileSync('./test_data/blog_detail_id' + blogId + '.txt', {encoding: 'utf8'});
-    return content;
+blogBase.prototype.getBlogDetail = function(_id, callback) {
+    var blogInfo = new BlogInfo();
+    blogInfo.getBlogDetail(_id, function(err, doc){
+        if(err || !doc.filepath || !doc.filename){
+            callback(err, null);
+        }else{
+            var fsPath = config.DATA_FILE_PATH + '/' + doc.filepath + '/' + doc.filename;
+            doc.content = fs.readFileSync(fsPath, {encoding: 'utf8'});
+            callback(err, doc);
+        }
+    });
 };
 
 module.exports = new blogBase();
