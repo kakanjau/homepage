@@ -6,6 +6,7 @@
 
 var util = require('util');
 var fs = require('fs');
+var md = require('node-markdown').Markdown;
 var BlogInfo = require('./mongo/blogInfo');
 var config = require('../appconfig');
 
@@ -36,6 +37,13 @@ blogBase.prototype.getBlogDetail = function(_id, callback) {
         }else{
             var fsPath = config.DATA_FILE_PATH + '/' + doc.filepath + '/' + doc.filename;
             doc.content = fs.readFileSync(fsPath, {encoding: 'utf8'});
+            switch(doc.fileType){
+                case 'md' : doc.content = md(doc.content);
+                    break;
+                case 'html' :
+                default :
+                    break;
+            }
             callback(err, doc);
         }
     });

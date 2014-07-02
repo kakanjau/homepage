@@ -13,5 +13,5 @@ module.exports = {
         schema : 'homepage'
     },
 
-    DATA_FILE_PATH : 'F:/GitHub/homepage/test_data'
+    DATA_FILE_PATH : './public/blogs'
 };

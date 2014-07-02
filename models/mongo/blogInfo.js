@@ -16,6 +16,7 @@ var bloglist = new Schema({
     safari_count : Number,
     filepath : String,
     filename : String,
+    fileType : String,
     comments : [{
         user : String,
         reply_user : String,
@@ -38,7 +39,7 @@ bloglist.methods.getBlogList = function(condition, callback){
 
 bloglist.methods.getBlogDetail = function(_id, callback){
     return this.model('bloglist').findById(_id)
-        .select('blogId category blogName create_time update_time safari_count filepath filename comments')
+        //.select('blogId category blogName create_time update_time safari_count filepath filename fileType comments')//
         .exec(function(err, doc){
             callback(err, doc);
         });
