@@ -14,7 +14,7 @@ var blogBase = function() {
 };
 
 blogBase.prototype.getAsideInfo = function() {
-    var data = fs.readFileSync('./test_data/blog_asideInfo_data.json', {encoding: 'utf8'});
+    var data = fs.readFileSync('./test_data/blog_asideInfo_data.json',  'utf8');
     return JSON.parse(data);
 };
 
@@ -36,7 +36,7 @@ blogBase.prototype.getBlogDetail = function(_id, callback) {
             callback(err, null);
         }else{
             var fsPath = config.DATA_FILE_PATH + '/' + doc.filepath + '/' + doc.filename;
-            doc.content = fs.readFileSync(fsPath, {encoding: 'utf8'});
+            doc.content = fs.readFileSync(fsPath,  'utf8');
             switch(doc.fileType){
                 case 'md' : doc.content = md(doc.content);
                     break;
