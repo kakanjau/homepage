@@ -58,6 +58,7 @@ app.use(function(err, req, res, next) {
     });
 });
 
-mongoose.connect(config.dbconfig.connect + config.dbconfig.schema);
+//mongoose.connect('mongodb://' + config.root.user + ':' + config.root.password + '@' + config.dbconfig.connect + ':' + config.dbconfig.port + '/' + config.dbconfig.schema);
+mongoose.connect(config.dbconfig.connect + '/' + config.dbconfig.schema);
 
 module.exports = app;

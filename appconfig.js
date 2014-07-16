@@ -4,12 +4,13 @@
 
 module.exports = {
     root : {
-        user : 'root',
-        password : 'root'
+        user : '',
+        password : ''
     },
 
     dbconfig : {
-        connect : 'mongodb://localhost/',
+        connect : 'localhost',
+        port : '27017',
         schema : 'homepage'
     },
 
