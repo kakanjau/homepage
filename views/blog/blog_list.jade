@@ -5,9 +5,12 @@ div
     each blog in bloglist
         div.row
             h4.col-lg-6
-                a(href='blog/blog_detail/'+blog._id) #{blog.blogName}
+                a(href='blog/blog_detail/'+blog._id) #{blog.blogName} #{blog.showArtist}
             h5.col-lg-6
                 - var time = blog.create_time.toDateString();
-                small #{time} | 阅读数:
-                    span.badge #{blog.safari_count}
-        div.panel #{blog.intro}
+                small #{time}   <!-- | 阅读数: -->
+                    <!-- span.badge #{blog.safari_count} -->
+        if blog.showArtist
+            div.panel-bogy!=blog.content
+        else
+            div.panel #{blog.intro}

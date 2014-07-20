@@ -13,7 +13,26 @@ function list(req, res, next) {
         res.data = res.data || {};
         res.data.bloglist = bloglist;
         res.data.blogType = 'list';
-        res.render('blog/blog_index', res.data);
+
+        var count = bloglist.length;
+        bloglist.forEach(function(blog, index){
+            if(blog.showArtist){
+                blogBase.getBlogDetail(blog._id, function(err, docDetail){
+                    count--;
+                    if(!err){
+                        res.data.bloglist[index] = docDetail;
+                    }
+                    if(count == 0){
+                        res.render('blog/blog_index', res.data);
+                    }
+                });
+            }else{
+                count --;
+            }
+        });
+        if(count == 0){
+            res.render('blog/blog_index', res.data);
+        }
     });
 }
 

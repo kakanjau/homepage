@@ -13,23 +13,7 @@ var config = require('../appconfig');
 var blogBase = function() {
 };
 
-blogBase.prototype.getAsideInfo = function() {
-    var data = fs.readFileSync('./test_data/blog_asideInfo_data.json',  'utf8');
-    return JSON.parse(data);
-};
-
-blogBase.prototype.getBlogList = function(category, callback) {
-    var blogInfo = new BlogInfo();
-    blogInfo.getBlogList({}, function(err, docs){
-        callback(err, docs);
-    });
-};
-
-blogBase.prototype.saveBlog = function(blog, callback) {
-
-}
-
-blogBase.prototype.getBlogDetail = function(_id, callback) {
+var getBlogDetail = function(_id, callback) {
     var blogInfo = new BlogInfo();
     blogInfo.getBlogDetail(_id, function(err, doc){
         if(err || !doc.filepath || !doc.filename){
@@ -46,6 +30,26 @@ blogBase.prototype.getBlogDetail = function(_id, callback) {
             }
             callback(err, doc);
         }
+    });
+};
+
+blogBase.prototype.getAsideInfo = function() {
+    var data = fs.readFileSync('./test_data/blog_asideInfo_data.json',  'utf8');
+    return JSON.parse(data);
+};
+
+blogBase.prototype.saveBlog = function(blog, callback) {
+
+}
+
+blogBase.prototype.getBlogDetail = function(_id, callback){
+    getBlogDetail(_id, callback);
+}
+
+blogBase.prototype.getBlogList = function(category, callback) {
+    var blogInfo = new BlogInfo();
+    blogInfo.getBlogList({}, function(err, docs){
+        callback(err, docs);
     });
 };
 

@@ -17,6 +17,7 @@ var bloglist = new Schema({
     filepath : String,
     filename : String,
     fileType : String,
+    showArtist : Boolean,
     comments : [{
         user : String,
         reply_user : String,
@@ -32,8 +33,9 @@ var bloglist = new Schema({
 });
 
 bloglist.methods.getBlogList = function(condition, callback){
-    return this.model('bloglist').find({}, '_id blogId intro blogName create_time safari_count')
+    return this.model('bloglist').find({}, '_id blogId intro blogName create_time safari_count showArtist')
         .limit((condition&&condition.limit) || 10)
+        .sort('-update_time')
         .exec(callback);
 };
 
