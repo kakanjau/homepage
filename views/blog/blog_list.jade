@@ -3,14 +3,21 @@
 
 div
     each blog in bloglist
-        div.row
-            h4.col-lg-6
-                a(href='blog/blog_detail/'+blog._id) #{blog.blogName} #{blog.showArtist}
-            h5.col-lg-6
-                - var time = blog.create_time.toDateString();
-                small #{time}   <!-- | 阅读数: -->
-                    <!-- span.badge #{blog.safari_count} -->
-        if blog.showArtist
-            div.panel-bogy!=blog.content
-        else
-            div.panel #{blog.intro}
+        div
+            .panel.panel-default
+                .panel-heading.row(style='margin: 0 0 0 0')
+                    h3.col-md-8
+                        a(href='blog/blog_detail/'+blog._id) #{blog.blogName}
+                    h5.col-md-2
+                        - var time = blog.create_time.toDateString();
+                        small #{time}   <!-- | 阅读数: -->
+                            <!-- span.badge #{blog.safari_count} -->
+                    h5.col-md-2
+                        if blog.showArtist
+                            button.btn.btn-info
+                                span.glyphicon.glyphicon-collapse-up
+                if blog.showArtist
+                    div.panel-body!=blog.content
+                    div.panel-body(style='display:none') #{blog.intro}
+                else
+                    div.panel-body #{blog.intro}

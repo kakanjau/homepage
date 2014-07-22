@@ -1,6 +1,3 @@
-#ExtJs的extend
-> 理解js的原型链和继承
-
 ##extend函数说明
 ###extend的调用形式
 ExtJs的extend函数，有两种调用形式：
