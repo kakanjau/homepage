@@ -19,4 +19,7 @@ router.get('/todo', function(req, res) {
 router.get('/', function(req, res) {
    res.redirect('blog/bloglist');
 });
+router.get('/blog', function(req, res) {
+    res.redirect('blog/bloglist');
+});
 module.exports = router;

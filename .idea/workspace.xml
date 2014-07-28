@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a99fb3a3-cd31-40db-b9d2-125d30170aef" name="Default" comment="追加mongo的dump文件&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/blog.js" afterPath="$PROJECT_DIR$/routes/blog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/mongo/blogInfo.js" afterPath="$PROJECT_DIR$/models/mongo/blogInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/blog/blog_list.jade" afterPath="$PROJECT_DIR$/views/blog/blog_list.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error.jade" afterPath="$PROJECT_DIR$/views/error.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/includes/header.jade" afterPath="$PROJECT_DIR$/views/includes/header.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="homepage.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="header.jade" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="header.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/includes/header.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="56" selection-start="623" selection-end="623" vertical-scroll-proportion="0.44407347" vertical-offset="0" max-vertical-offset="599">
+            <state line="6" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
               <folding />
             </state>
           </provider>
@@ -77,10 +70,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="30" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
+            <state line="21" column="17" selection-start="572" selection-end="572" vertical-scroll-proportion="0.66611016" vertical-offset="0" max-vertical-offset="599">
               <folding />
             </state>
           </provider>
@@ -155,9 +148,9 @@
         <option value="$PROJECT_DIR$/routes/blog.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/error.jade" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/blog/blog_list.jade" />
         <option value="$PROJECT_DIR$/views/includes/header.jade" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -750,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="30" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/blog/blog_list.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="25" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="532">
@@ -766,7 +752,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/includes/header.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="56" selection-start="623" selection-end="623" vertical-scroll-proportion="0.44407347" vertical-offset="0" max-vertical-offset="599">
+        <state line="6" column="27" selection-start="201" selection-end="201" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="380">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="17" selection-start="572" selection-end="572" vertical-scroll-proportion="0.66611016" vertical-offset="0" max-vertical-offset="599">
           <folding />
         </state>
       </provider>
