@@ -39,7 +39,7 @@ bloglist.methods.getBlogList = function(arg, callback){
             condition[c] = arg.condition[c];
         }
     }
-    return this.model('bloglist').find(condition, '_id blogId intro blogName create_time safari_count showArtist')
+    return this.model('bloglist').find(condition, '_id blogId intro blogName create_time safari_count showArtist category')
         .limit(arg.page || 10)
         .sort('-update_time')
         .exec(callback);

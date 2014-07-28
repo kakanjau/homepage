@@ -7,6 +7,15 @@ function aside(req, res, next) {
     return next();
 }
 
+function header(req, res, next) {
+    var category = req.params.blogCategory;
+    res.data.category = category;
+    blogBase.getCategorys({}, function(err, categorys){
+        res.data.categorys = categorys;
+    });
+    return next();
+}
+
 function list(req, res, next) {
     var category = req.params.blogCategory;
     var condition = {category : category};
@@ -14,35 +23,32 @@ function list(req, res, next) {
     //var page = pageStart;
     var count = 0;
     res.data.category = category;
-    blogBase.getCategorys({}, function(err, categorys){
-        res.data.categorys = categorys;
 
-        blogBase.getBlogList({condition : condition}, function(err, bloglist){
-            res.data = res.data || {};
-            res.data.bloglist = bloglist;
-            res.data.category = category;
-            res.data.blogType = 'list';
+    blogBase.getBlogList({condition : condition}, function(err, bloglist){
+        res.data = res.data || {};
+        res.data.bloglist = bloglist;
+        res.data.category = category;
+        res.data.blogType = 'list';
 
-            count += bloglist.length;
-            bloglist.forEach(function(blog, index){
-                if(blog.showArtist){
-                    blogBase.getBlogDetail(blog._id, function(err, docDetail){
-                        count--;
-                        if(!err){
-                            res.data.bloglist[index] = docDetail;
-                        }
-                        if(count == 0){
-                            res.render('blog/blog_index', res.data);
-                        }
-                    });
-                }else{
-                    count --;
-                }
-            });
-            if(count == 0){
-                res.render('blog/blog_index', res.data);
+        count += bloglist.length;
+        bloglist.forEach(function(blog, index){
+            if(blog.showArtist){
+                blogBase.getBlogDetail(blog._id, function(err, docDetail){
+                    count--;
+                    if(!err){
+                        res.data.bloglist[index] = docDetail;
+                    }
+                    if(count == 0){
+                        res.render('blog/blog_index', res.data);
+                    }
+                });
+            }else{
+                count --;
             }
         });
+        if(count == 0){
+            res.render('blog/blog_index', res.data);
+        }
     });
 }
 
@@ -50,14 +56,13 @@ function detail(req, res, next) {
     var id = req.params._id;
     blogBase.getBlogDetail(id, function(err, doc){
         if(err || !doc){
-            var err = new Error('Not Found');
-            err.status = 404;
-            next(err);
+            next();
+        }else{
+            res.data = res.data || {};
+            res.data.blogType = 'detail';
+            res.data.blogDetail = doc;
+            res.render('blog/blog_index', res.data);
         }
-        res.data = res.data || {};
-        res.data.blogType = 'detail';
-        res.data.blogDetail = doc;
-        res.render('blog/blog_index', res.data);
     });
 
 }
@@ -68,6 +73,7 @@ function save(req, res, next) {
 }*/
 
 exports.aside = aside;
+exports.header = header;
 exports.list = list;
 exports.detail = detail;
 //exports.save = save;

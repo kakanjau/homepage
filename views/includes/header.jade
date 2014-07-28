@@ -7,8 +7,9 @@
               a(href='/blog')  乔卡卡的飞仙阁
         div.right
             ul(role='tablist').nav.nav-tabs.navbar-default
-                each cg in categorys
-                    - var url = '/blog/' + cg.category;
-                    - var active = (cg.category==category)?'active':'';
-                    li(role='presentation', class=active)
-                            a(href = url) #{cg.name}
+                if categorys
+                    each cg in categorys
+                        - var url = '/blog/bloglist/' + cg.category;
+                        - var active = (cg.category==category)?'active':'';
+                        li(role='presentation', class=active)
+                                a(href = url) #{cg.name}

@@ -7,7 +7,7 @@ div
             .panel.panel-default
                 .panel-heading.row(style='margin: 0 0 0 0')
                     h3.col-md-8
-                        a(href='blog/blog_detail/'+blog._id) #{blog.blogName}
+                        a(href='/blog/detail/'+blog.category + '/' +blog._id) #{blog.blogName}
                     h5.col-md-2
                         - var time = blog.create_time.toDateString();
                         small #{time}   <!-- | 阅读数: -->

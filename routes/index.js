@@ -4,9 +4,9 @@ var fs = require('fs');
 var blog = require('./blog');
 /* GET home page. */
 router.get(/^\/blog[\/]?/, blog.aside);
-router.get('/blog/:blogCategory?', blog.list);
-
-router.get('/blog/blog_detail/:_id', blog.detail);
+router.get(/^\/blog[\/]?/, blog.header);
+router.get('/blog/bloglist/:blogCategory?', blog.list);
+router.get('/blog/detail/:blogCategory?/:_id', blog.detail);
 
 router.get('/todo', function(req, res) {
   var data = {
@@ -17,6 +17,6 @@ router.get('/todo', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-   res.redirect('blog');
+   res.redirect('blog/bloglist');
 });
 module.exports = router;
