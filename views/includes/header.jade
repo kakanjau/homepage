@@ -1,6 +1,14 @@
 //
    Created by qiaoliang on 14-4-26.
   header.navbar-default.navbar-fixed-top
-    div(role='banner').container
-        p.navbar-brand  Welcome to
-          a(href='/blog')  乔卡卡的飞仙阁
+    div(role='banner').container.left
+        div.left
+            p.navbar-brand  Welcome to
+              a(href='/blog')  乔卡卡的飞仙阁
+        div.right
+            ul(role='tablist').nav.nav-tabs.navbar-default
+                each cg in categorys
+                    - var url = '/blog/' + cg.category;
+                    - var active = (cg.category==category)?'active':'';
+                    li(role='presentation', class=active)
+                            a(href = url) #{cg.name}

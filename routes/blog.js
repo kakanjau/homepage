@@ -9,30 +9,40 @@ function aside(req, res, next) {
 
 function list(req, res, next) {
     var category = req.params.blogCategory;
-    blogBase.getBlogList(category, function(err, bloglist){
-        res.data = res.data || {};
-        res.data.bloglist = bloglist;
-        res.data.blogType = 'list';
+    var condition = {category : category};
+    //var pageStart = req.params.pageStart;
+    //var page = pageStart;
+    var count = 0;
+    res.data.category = category;
+    blogBase.getCategorys({}, function(err, categorys){
+        res.data.categorys = categorys;
 
-        var count = bloglist.length;
-        bloglist.forEach(function(blog, index){
-            if(blog.showArtist){
-                blogBase.getBlogDetail(blog._id, function(err, docDetail){
-                    count--;
-                    if(!err){
-                        res.data.bloglist[index] = docDetail;
-                    }
-                    if(count == 0){
-                        res.render('blog/blog_index', res.data);
-                    }
-                });
-            }else{
-                count --;
+        blogBase.getBlogList({condition : condition}, function(err, bloglist){
+            res.data = res.data || {};
+            res.data.bloglist = bloglist;
+            res.data.category = category;
+            res.data.blogType = 'list';
+
+            count += bloglist.length;
+            bloglist.forEach(function(blog, index){
+                if(blog.showArtist){
+                    blogBase.getBlogDetail(blog._id, function(err, docDetail){
+                        count--;
+                        if(!err){
+                            res.data.bloglist[index] = docDetail;
+                        }
+                        if(count == 0){
+                            res.render('blog/blog_index', res.data);
+                        }
+                    });
+                }else{
+                    count --;
+                }
+            });
+            if(count == 0){
+                res.render('blog/blog_index', res.data);
             }
         });
-        if(count == 0){
-            res.render('blog/blog_index', res.data);
-        }
     });
 }
 

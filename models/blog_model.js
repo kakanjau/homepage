@@ -9,6 +9,7 @@ var fs = require('fs');
 var md = require('node-markdown').Markdown;
 var BlogInfo = require('./mongo/blogInfo');
 var config = require('../appconfig');
+var Category = require('./mongo/category');
 
 var blogBase = function() {
 };
@@ -46,9 +47,16 @@ blogBase.prototype.getBlogDetail = function(_id, callback){
     getBlogDetail(_id, callback);
 }
 
-blogBase.prototype.getBlogList = function(category, callback) {
+blogBase.prototype.getBlogList = function(arg, callback) {
     var blogInfo = new BlogInfo();
-    blogInfo.getBlogList({}, function(err, docs){
+    blogInfo.getBlogList(arg, function(err, docs){
+        callback(err, docs);
+    });
+};
+
+blogBase.prototype.getCategorys = function(arg, callback){
+    var category = new Category();
+    category.getCategorys(arg, function(err, docs){
         callback(err, docs);
     });
 };

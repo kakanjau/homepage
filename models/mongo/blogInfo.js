@@ -8,7 +8,7 @@ var mongoose = require('mongoose'),
 
 var bloglist = new Schema({
     blogId : String,
-    category : String,
+    category : Number,
     blogName : String,
     intro : String,
     create_time : {type:Date, default: Date.now},
@@ -32,9 +32,15 @@ var bloglist = new Schema({
     }]
 });
 
-bloglist.methods.getBlogList = function(condition, callback){
-    return this.model('bloglist').find({}, '_id blogId intro blogName create_time safari_count showArtist')
-        .limit((condition&&condition.limit) || 10)
+bloglist.methods.getBlogList = function(arg, callback){
+    var condition = {};
+    for(var c in arg.condition){
+        if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
+            condition[c] = arg.condition[c];
+        }
+    }
+    return this.model('bloglist').find(condition, '_id blogId intro blogName create_time safari_count showArtist')
+        .limit(arg.page || 10)
         .sort('-update_time')
         .exec(callback);
 };
