@@ -4,7 +4,7 @@ var blogBase = require('../models/blog_model');
 function aside(req, res, next) {
     res.data = res.data || {};
     res.data.aside = blogBase.getAsideInfo();
-    return next();
+    next();
 }
 
 function header(req, res, next) {
@@ -12,8 +12,8 @@ function header(req, res, next) {
     res.data.category = category;
     blogBase.getCategorys({}, function(err, categorys){
         res.data.categorys = categorys;
+        next();
     });
-    return next();
 }
 
 function list(req, res, next) {
