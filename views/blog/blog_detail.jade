@@ -2,6 +2,7 @@
    Created by qiaoliang on 14-4-29.
 
 div
-    div.panel.panel-default
-        div.panel-heading #{blogDetail.name}
-        div.panel-bogy!=blogDetail.content
+    div.panel.panel-default(style='border : 0px solid transparent')
+        div.panel-heading 
+            h3 #{blogDetail.blogName}
+        div.panel-body!=blogDetail.content
