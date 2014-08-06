@@ -3,8 +3,8 @@ var router = express.Router();
 var fs = require('fs');
 var blog = require('./blog');
 /* GET home page. */
-router.get(/^\/blog[\/]?/, blog.aside);
-router.get(/^\/blog[\/]?/, blog.header);
+router.all(/^\/blog[\/]?/, blog.aside);
+router.all(/^\/blog[\/]?/, blog.header);
 router.get('/blog/bloglist/:blogCategory?', blog.list);
 router.get('/blog/detail/:blogCategory?/:_id', blog.detail);
 
