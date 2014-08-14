@@ -6,8 +6,10 @@ extends ../layout
 block scripts
     script(src='/lib/showdown.js')
     script(src='/javascript/blogs/bloglist.js')
+    script(src='/javascript/blogs/admin.js')
 
 block content
+    include admin
     .row-fluid
         div.container
             div
