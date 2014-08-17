@@ -16,7 +16,7 @@ function header(req, res, next) {
     });
 }
 
-function list(req, res, next) {
+function list(req, res, next, callback) {
     var category = req.params.blogCategory;
     var condition = {category : category};
     //var pageStart = req.params.pageStart;
@@ -39,7 +39,7 @@ function list(req, res, next) {
                         res.data.bloglist[index] = docDetail;
                     }
                     if(count == 0){
-                        res.render('blog/blog_index', res.data);
+                        callback();//res.render('blog/blog_index', res.data);
                     }
                 });
             }else{
@@ -47,12 +47,12 @@ function list(req, res, next) {
             }
         });
         if(count == 0){
-            res.render('blog/blog_index', res.data);
+            callback();//res.render('blog/blog_index', res.data);
         }
     });
 }
 
-function detail(req, res, next) {
+function detail(req, res, next, callback) {
     var id = req.params._id;
     blogBase.getBlogDetail(id, function(err, doc){
         if(err || !doc){
@@ -61,7 +61,7 @@ function detail(req, res, next) {
             res.data = res.data || {};
             res.data.blogType = 'detail';
             res.data.blogDetail = doc;
-            res.render('blog/blog_index', res.data);
+            callback();//res.render('blog/blog_index', res.data);
         }
     });
 

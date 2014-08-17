@@ -6,7 +6,7 @@
 
 var util = require('util');
 var fs = require('fs');
-var md = require('node-markdown').Markdown;
+var md = require('markdown').markdown;
 var BlogInfo = require('./mongo/blogInfo');
 var config = require('../appconfig');
 var Category = require('./mongo/category');
@@ -23,7 +23,7 @@ var getBlogDetail = function(_id, callback) {
             var fsPath = config.DATA_FILE_PATH + '/' + doc.filepath + '/' + doc.filename;
             doc.content = fs.readFileSync(fsPath,  'utf8');
             switch(doc.fileType){
-                case 'md' : doc.content = md(doc.content);
+                case 'md' : doc.content = md.toHTML(doc.content);
                     break;
                 case 'html' :
                 default :
@@ -39,8 +39,20 @@ blogBase.prototype.getAsideInfo = function() {
     return JSON.parse(data);
 };
 
-blogBase.prototype.saveBlog = function(blog, callback) {
-
+blogBase.prototype.saveBlog = function(blog, callback) {    
+    //todo 创建文件
+    var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
+    var fsPath =  dirPath + '/' + blog.filename;
+    fs.exists(dirPath, function(exists){
+        if(!exists){
+            fs.mkdirSync(dirPath);
+        }
+        fs.writeFile(fsPath, function(err){
+            if(err) throw err;
+        });
+    })
+    var blogInfo = new BlogInfo(blog);
+    blogInfo.save(callback);
 }
 
 blogBase.prototype.getBlogDetail = function(_id, callback){

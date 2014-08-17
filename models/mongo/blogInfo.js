@@ -12,12 +12,13 @@ var bloglist = new Schema({
     blogName : String,
     intro : String,
     create_time : {type:Date, default: Date.now},
-    update_time : Date,
+    update_time : {type:Date, default: Date.now},
     safari_count : Number,
     filepath : String,
     filename : String,
-    fileType : String,
-    showArtist : Boolean,
+    fileType : {type:String, default: 'md'},
+    showArtist : {type:Boolean, default: true},
+    isShow : {type:Boolean, default: true},
     comments : [{
         user : String,
         reply_user : String,
@@ -39,7 +40,7 @@ bloglist.methods.getBlogList = function(arg, callback){
             condition[c] = arg.condition[c];
         }
     }
-    return this.model('bloglist').find(condition, '_id blogId intro blogName create_time safari_count showArtist category')
+    return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
         .limit(arg.page || 10)
         .sort('-update_time')
         .exec(callback);
@@ -52,5 +53,9 @@ bloglist.methods.getBlogDetail = function(_id, callback){
             callback(err, doc);
         });
 };
+
+bloglist.methods.saveBlog = function(blog, callback){
+
+}
 
 module.exports = mongoose.model('bloglist', bloglist);
