@@ -1,0 +1,28 @@
+//
+   Created by qiaoliang on 14-8-16.
+
+div
+    include add_artist
+    div.panel
+        button(id='addArtistBtn' type='button').btn.btn-default
+            span.glyphicon.glyphicon-plus
+    div
+        table.table.table-striped.table-hover.table-condensed
+            tr
+                th(colspan=3) 文章名
+                th 显示
+                th 删除
+            each blog in bloglist
+                tr(id=blog._id)
+                    td(colspan=3)
+                        a(href='/user/detail/'+blog.category + '/' +blog._id) #{blog.blogName}
+                    td
+                        if blog.isShow
+                            button.btn.btn-default.btn-sm
+                                span.glyphicon.glyphicon-stop
+                        else
+                            button.btn.btn-default.btn-sm
+                                span.glyphicon.glyphicon-play                        
+                    td
+                        button.btn.btn-default.btn-sm
+                            span.glyphicon.glyphicon-trash

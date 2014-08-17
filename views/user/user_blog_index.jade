@@ -1,0 +1,21 @@
+//
+   Created by qiaoliang on 14-4-29.
+   博客页面博客列表内容，是博客的主页面
+
+extends ../blog_base
+
+block scripts
+    script(src='/lib/markdown.js')
+    script(src='/javascript/user/user.js')
+
+block content
+    .row-fluid
+        div.container
+            div
+                .col-lg-8
+                    if blogType == 'list'
+                        include user_blog_list
+                    else
+                        include user_blog_detail
+                .col-lg-3
+                    include ../blog/blog_aside

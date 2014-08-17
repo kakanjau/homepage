@@ -1,0 +1,27 @@
+//
+    Created by qiaoliang on 16-8-26.
+
+div.container
+    #dialog(title='addAtrist')
+        form.form(id="add_artist", action="/user/addArtist", method="post")
+            .row
+                .col-lg-8
+                    .input-group
+                        span.input-group-addon(for='title') title
+                        input.form-control(type='text' required name='title' id='title')
+                .col-lg-4
+                    .input-group
+                        span.input-group-addon(for='category') category
+                        select.form-control(name='category' id='category')
+                            option(value=1) 随笔
+                            option(value=2) 技术
+            br
+            .row
+                .col-lg-6
+                    .panel(id='introPanel')
+                        textarea(id='intro' required name='intro')
+                    .panel(id='container')
+                        textarea(id='text' required name='text')
+                .col-lg-6
+                    .panel(id='preview')
+                        pre.panel-body
