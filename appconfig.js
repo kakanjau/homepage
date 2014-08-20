@@ -14,5 +14,6 @@ module.exports = {
         schema : 'homepage'
     },
 
-    DATA_FILE_PATH : './public/blogs'
+    DATA_FILE_PATH : './public/blogs',
+    TRASH_FILE_PATH : './test_data/trash_blogs'
 };

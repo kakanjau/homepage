@@ -9,7 +9,7 @@ $(function(){
         autoOpen: false,
         buttons: {
             "Preview" : function(){
-                $('#preview pre').html(markdown.toHTML($('#container textarea').val()));
+                $('#preview').html(markdown.toHTML($('#container textarea').val()));
             },
             "Submit" : function(){
                 $('#add_artist').submit();
@@ -24,11 +24,84 @@ $(function(){
             
             $(this).find('#introPanel textarea').css('resize', 'none').innerHeight(100).innerWidth(textareaWidth);
             $(this).find('#container textarea').css('resize', 'none').innerHeight(textareaHeight).innerWidth(textareaWidth);
-            $(this).find('pre').innerHeight(textareaHeight+100).innerWidth(textareaWidth);
+            $(this).find('#preview').innerHeight(textareaHeight+100).innerWidth(textareaWidth);
         }
     });
 
     $('#addArtistBtn').click(function(){
          $('#dialog').dialog('open');
      });
+
+    $('#blogList .blog-delete').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/user/delete',
+            data: {_id : $(this).parents('tr').attr('id')},
+            success: function(){
+                location.reload();
+            },
+            dataType: 'json'
+        });
+    });
+
+    $('#blogList .blog-hidden').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/user/update/blog_hidden',
+            data: {_id: $(this).parents('tr').attr('id')},
+            success: function(v){
+                location.reload();
+            }
+        });
+    });
+
+    $('#blogList .blog-show').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/user/update/blog_show',
+            data: {_id: $(this).parents('tr').attr('id')},
+            success: function(v){
+                location.reload();
+            }
+        });
+    });
+
+    $('#blogList .artist-hidden').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/user/update/artist_hidden',
+            data: {_id: $(this).parents('tr').attr('id')},
+            success: function(v){
+                location.reload();
+            }
+        });
+    });
+
+    $('#blogList .artist-show').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: '/user/update/artist_show',
+            data: {_id: $(this).parents('tr').attr('id')},
+            success: function(v){
+                location.reload();
+            }
+        });
+    });
+
+    $('#blogList a').click(function(){
+        $.ajax({
+            type: 'GET',
+            url: '/user/findblog',
+            data: {_id: $(this).parents('tr').attr('id')},
+            success: function(v){
+                var blog = v.blog;
+                $('#dialog').dialog('open');
+                $('#dialog #_id').val(blog._id);
+                $('#dialog #title').val(blog.blogName);
+                $('#dialog #intro').val(blog.intro);
+                $('#dialog #text').val(blog.text);
+                $('#dialog #category').val(blog.category);
+            }
+        });
+    });
 });

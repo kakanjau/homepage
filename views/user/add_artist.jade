@@ -3,12 +3,13 @@
 
 div.container
     #dialog(title='addAtrist')
-        form.form(id="add_artist", action="/user/addArtist", method="post")
+        form.form(id="add_artist", action="/user/saveArtist", method="post")
             .row
                 .col-lg-8
                     .input-group
                         span.input-group-addon(for='title') title
                         input.form-control(type='text' required name='title' id='title')
+                        input(type='text' name='_id' id='_id' style='display:none')
                 .col-lg-4
                     .input-group
                         span.input-group-addon(for='category') category
@@ -23,5 +24,5 @@ div.container
                     .panel(id='container')
                         textarea(id='text' required name='text')
                 .col-lg-6
-                    .panel(id='preview')
-                        pre.panel-body
+                    form.form
+                        .panel-body(id='preview' style="overflow:auto;")

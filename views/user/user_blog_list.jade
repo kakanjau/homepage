@@ -7,22 +7,31 @@ div
         button(id='addArtistBtn' type='button').btn.btn-default
             span.glyphicon.glyphicon-plus
     div
-        table.table.table-striped.table-hover.table-condensed
+        table(id='blogList').table.table-striped.table-hover.table-condensed
             tr
                 th(colspan=3) 文章名
-                th 显示
-                th 删除
+                th 显示博客
+                th 显示内容
+                th 删除博客
             each blog in bloglist
                 tr(id=blog._id)
                     td(colspan=3)
-                        a(href='/user/detail/'+blog.category + '/' +blog._id) #{blog.blogName}
+                        a #{blog.blogName}
                     td
                         if blog.isShow
-                            button.btn.btn-default.btn-sm
+                            button.btn.btn-default.btn-sm.blog-hidden
                                 span.glyphicon.glyphicon-stop
                         else
-                            button.btn.btn-default.btn-sm
-                                span.glyphicon.glyphicon-play                        
+                            button.btn.btn-default.btn-sm.blog-show
+                                span.glyphicon.glyphicon-play
                     td
-                        button.btn.btn-default.btn-sm
+                        if blog.showArtist
+                            button.btn.btn-default.btn-sm.artist-hidden
+                                span.glyphicon.glyphicon-stop
+                        else
+                            button.btn.btn-default.btn-sm.artist-show
+                                span.glyphicon.glyphicon-play
+
+                    td
+                        button.btn.btn-default.btn-sm.blog-delete
                             span.glyphicon.glyphicon-trash

@@ -16,24 +16,30 @@ router.all('/user', function(req, res, next){
 	res.redirect('/');
 });
 
-router.all(/^\/user[\/]?/, function(req, res, next){
+router.get(/^\/user[\/]?/, function(req, res, next){
 	blog.aside(req, res, next);
 });
 
-router.all(/^\/user[\/]?/, function(req, res, next){
+router.get(/^\/user[\/]?/, function(req, res, next){
 	blog.header(req, res, next);
 });
 
-router.post('/user/addArtist', function(req, res, next){
+router.post('/user/saveArtist', function(req, res, next){
 	var blog = {};
 	blog.category = req.body.category;
-	blog.blogName = blog.filepath = req.body.title;
+	blog.blogName = req.body.title;
 	blog.intro = req.body.intro;
-	blog.filename = req.body.title + '.md';
+	blog.text = req.body.text;
 	//保存
-	blogBase.saveBlog(blog, function(){
-		res.redirect('/user/bloglist');
-	});
+	if(req.body._id){
+		blogBase.updateBlog(req.body._id, blog, function(){
+			res.redirect('/user/bloglist');
+		});
+	}else{
+		blogBase.saveBlog(blog, function(){
+			res.redirect('/user/bloglist');
+		});
+	}
 });
 
 router.get('/user/bloglist/:blogCategory?', function(req, res, next){
@@ -42,9 +48,88 @@ router.get('/user/bloglist/:blogCategory?', function(req, res, next){
 	});
 });
 
-router.get('/user/detail/:blogCategory?/:_id', function(req, res, next){
-	blog.detail(req, res, next, function(){
-		res.render('user/blog_index', res.data);
+router.get('/user/findblog', function(req, res, next){
+	blogBase.getBlogDetailForUpdate(req.query._id, function(err, blog){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			var blogDetail = {
+				_id: blog._id,
+				blogName: blog.blogName,
+				intro: blog.intro,
+				text: blog.content,
+				category: blog.category
+			};
+			res.json({blog: blogDetail});
+		}
+	});
+});
+
+router.post('/user/delete', function(req, res, next){
+	blogBase.removeBlog(req.body._id, function(err){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			res.json({status: 'success'});
+		}
+	});
+});
+
+router.post('/user/update/blog_hidden', function(req, res, next){
+	blogBase.updateBlog(req.body._id, {isShow: false}, function(err, blog){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			res.json({blog: blog});
+		}
+	});
+});
+
+router.post('/user/update/blog_show', function(req, res, next){
+	blogBase.updateBlog(req.body._id, {isShow: true}, function(err, blog){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			res.json({blog: blog});
+		}
+	});
+});
+
+router.post('/user/update/artist_hidden', function(req, res, next){
+	blogBase.updateBlog(req.body._id, {showArtist: false}, function(err, blog){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			res.json({blog: blog});
+		}
+	});
+});
+
+router.post('/user/update/artist_show', function(req, res, next){
+	blogBase.updateBlog(req.body._id, {showArtist: true}, function(err, blog){
+		if(err){
+			res.json({
+				status: 'err',
+				errInfo: err
+			});
+		}else{	
+			res.json({blog: blog});
+		}
 	});
 });
 

@@ -48,14 +48,19 @@ bloglist.methods.getBlogList = function(arg, callback){
 
 bloglist.methods.getBlogDetail = function(_id, callback){
     return this.model('bloglist').findById(_id)
-        //.select('blogId category blogName create_time update_time safari_count filepath filename fileType comments')//
-        .exec(function(err, doc){
-            callback(err, doc);
-        });
+        .exec(callback);
+};
+
+bloglist.methods.deleteBlog = function(_id, callback){
+    return this.model('bloglist').findByIdAndRemove(_id, callback);
+};
+
+bloglist.methods.updateBlogById = function(_id, update, callback){
+    return this.model('bloglist').findByIdAndUpdate(_id, update, callback);
 };
 
 bloglist.methods.saveBlog = function(blog, callback){
 
-}
+};
 
 module.exports = mongoose.model('bloglist', bloglist);

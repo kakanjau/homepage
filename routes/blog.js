@@ -33,7 +33,7 @@ function list(req, res, next, callback) {
         count += bloglist.length;
         bloglist.forEach(function(blog, index){
             if(blog.showArtist){
-                blogBase.getBlogDetail(blog._id, function(err, docDetail){
+                blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
                     count--;
                     if(!err){
                         res.data.bloglist[index] = docDetail;
@@ -54,7 +54,7 @@ function list(req, res, next, callback) {
 
 function detail(req, res, next, callback) {
     var id = req.params._id;
-    blogBase.getBlogDetail(id, function(err, doc){
+    blogBase.getBlogDetailForShow(id, function(err, doc){
         if(err || !doc){
             next();
         }else{
