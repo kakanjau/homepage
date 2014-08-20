@@ -125,7 +125,7 @@ blogBase.prototype.removeBlog = function(_id, callback){
         fs.rmdirSync(dirPath);
     };
 
-    blogInfo.getBlogDetail(_id, callback);
+    blogInfo.deleteBlog(_id, callback);
 };
 
 module.exports = new blogBase();
