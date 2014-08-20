@@ -21,14 +21,16 @@ var getBlogDetail = function(_id, isTranslateMd, callback) {
             callback(err, null);
         }else{
             var fsPath = config.DATA_FILE_PATH + '/' + doc.filepath + '/' + doc.filename;
-            doc.content = fs.readFileSync(fsPath,  'utf8');
-            if(isTranslateMd){                
-                switch(doc.fileType){
-                    case 'md' : doc.content = md.toHTML(doc.content);
-                        break;
-                    case 'html' :
-                    default :
-                        break;
+            if(fs.existsSync(fsPath)){                
+                doc.content = fs.readFileSync(fsPath,  'utf8');
+                if(isTranslateMd){                
+                    switch(doc.fileType){
+                        case 'md' : doc.content = md.toHTML(doc.content);
+                            break;
+                        case 'html' :
+                        default :
+                            break;
+                    }
                 }
             }
             callback(err, doc);
