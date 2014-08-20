@@ -22,9 +22,14 @@ $(function(){
             var textareaHeight = dialogHeight-350;
             var textareaWidth = $(this).find('#container').width(); 
             
-            $(this).find('#introPanel textarea').css('resize', 'none').innerHeight(100).innerWidth(textareaWidth);
-            $(this).find('#container textarea').css('resize', 'none').innerHeight(textareaHeight).innerWidth(textareaWidth);
-            $(this).find('#preview').innerHeight(textareaHeight+100).innerWidth(textareaWidth);
+            $(this).find('#introPanel textarea').css('resize', 'none').innerHeight(100).innerWidth(textareaWidth)
+            .val('');
+            $(this).find('#container textarea').css('resize', 'none').innerHeight(textareaHeight).innerWidth(textareaWidth)
+            .val('');
+            $(this).find('#preview').innerHeight(textareaHeight+100).innerWidth(textareaWidth)
+            .html('');
+
+            $(this).find('input').not(':button, :submit, :reset').val('');
         }
     });
 
