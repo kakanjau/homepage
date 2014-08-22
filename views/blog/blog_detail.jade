@@ -7,11 +7,5 @@ div
             h3 #{blogDetail.blogName}
         div.panel-body!=blogDetail.content
 
-    #bm_comments
-    - var bm_title = blogDetail.blogName;
-    script.
-        (function(){
-            var script = document.createElement('script'); script.type = "text/javascript";
-            script.src = "http://baye.me/script?key=4a9e45dc29b311e48cd5123143074826";
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
-        })();
+    #uyan_frame
+    script(type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1959764")
