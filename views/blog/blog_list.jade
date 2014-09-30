@@ -12,8 +12,8 @@ div
                         span.badge #{time.getMonth()+1} / #{time.getDate()}
                         br
                         span.badge #{time.getFullYear()} 
-                #article.panel.panel-default.col-sm-10
-                    .panel-heading.row(style='padding: 5px 10px')
+                #article.panel.panel-default.col-sm-10(style='padding: 0px')
+                    .panel-heading.row(style='padding: 5px 10px; margin: 0px')
                         h4.col-sm-10
                             a(href='/blog/detail/'+blog.category + '/' +blog._id) #{blog.blogName}
                         span.col-sm-2
@@ -25,8 +25,8 @@ div
                                         span.glyphicon.glyphicon-collapse-up
                     if blog.showArtist
                         #article_detail.panel-body!=blog.content
-                        #article_intro.panel-body(style='display:none')
-                            pre(style='border : 0px solid transparent')!=blog.intro
+                        #article_intro.panel-body(style='display:none; padding: 0px')
+                            pre(style='border : 0px solid transparent; margin: 0px')!=blog.intro
                     else
-                        div.panel-body
-                            pre(style='border : 0px solid transparent')!=blog.intro
+                        div.panel-body(style='padding: 0px')
+                            pre(style='border : 0px solid transparent; margin: 0px')!=blog.intro
