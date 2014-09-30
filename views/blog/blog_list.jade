@@ -4,21 +4,25 @@
 div
     each blog in bloglist
         if blog.isShow
-            div
-                #article.panel.panel-default
-                    .panel-heading.row(style='margin: 0 0 0 0')
-                        h3.col-md-8
+            div.row
+                .col-sm-2
+                    - var time = blog.create_time;
+                    p
+                    p.text-right 
+                        span.badge #{time.getMonth()+1} / #{time.getDate()}
+                        br
+                        span.badge #{time.getFullYear()} 
+                #article.panel.panel-default.col-sm-10
+                    .panel-heading.row(style='padding: 5px 10px')
+                        h4.col-sm-10
                             a(href='/blog/detail/'+blog.category + '/' +blog._id) #{blog.blogName}
-                        h5.col-md-2
-                            - var time = blog.create_time.toDateString();
-                            small #{time}   <!-- | 阅读数: -->
-                                <!-- span.badge #{blog.safari_count} -->
-                        h5.col-md-2
-                            if blog.showArtist
-                                button.btn.btn-default(id='showButton', style='display:none')
-                                    span.glyphicon.glyphicon-collapse-down
-                                button.btn.btn-default(id='hiddenButton')
-                                    span.glyphicon.glyphicon-collapse-up
+                        span.col-sm-2
+                            p.text-right 
+                                if blog.showArtist
+                                    button.btn.btn-default(id='showButton', style='display:none')
+                                        span.glyphicon.glyphicon-collapse-down
+                                    button.btn.btn-default(id='hiddenButton')
+                                        span.glyphicon.glyphicon-collapse-up
                     if blog.showArtist
                         #article_detail.panel-body!=blog.content
                         #article_intro.panel-body(style='display:none')
