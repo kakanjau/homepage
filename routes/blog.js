@@ -25,7 +25,7 @@ function list(req, res, next, callback) {
         condition: condition,
         page: {
             page: req.params.page,
-            maxPerPage: 3
+            maxPerPage: req.params.page ? 3 : null
         }
     };
 

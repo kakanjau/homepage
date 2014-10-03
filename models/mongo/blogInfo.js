@@ -47,6 +47,18 @@ bloglist.methods.getBlogList = function(arg, callback){
         .exec(callback);
 };
 
+bloglist.methods.getBlogListForMng = function(arg, callback){
+    var condition = {};
+    for(var c in arg.condition){
+        if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
+            condition[c] = arg.condition[c];
+        }
+    }
+    return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
+        .sort('-update_time')
+        .exec(callback);
+};
+
 bloglist.methods.getBlogCount = function(arg, callback){
     var condition = {};
     for(var c in arg.condition){
