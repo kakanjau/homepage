@@ -41,9 +41,20 @@ bloglist.methods.getBlogList = function(arg, callback){
         }
     }
     return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
-        .limit(arg.page || 10)
+        .skip((arg.page.page-1)*arg.page.maxPerPage + 1)
+        .limit(arg.page.maxPerPage+1)
         .sort('-update_time')
         .exec(callback);
+};
+
+bloglist.methods.getBlogCount = function(arg, callback){
+    var condition = {};
+    for(var c in arg.condition){
+        if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
+            condition[c] = arg.condition[c];
+        }
+    }
+    return this.model('bloglist').count(condition, callback);
 };
 
 bloglist.methods.getBlogDetail = function(_id, callback){

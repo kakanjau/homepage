@@ -9,7 +9,7 @@ router.all(/^\/blog[\/]?/, function(req, res, next){
 router.all(/^\/blog[\/]?/, function(req, res, next){
 	blog.header(req, res, next);
 });
-router.get('/blog/bloglist/:blogCategory?', function(req, res, next){
+router.get('/blog/bloglist/:blogCategory?/:page', function(req, res, next){
 	blog.list(req, res, next, function(){
 		res.render('blog/blog_index', res.data);
 	});
@@ -29,11 +29,11 @@ router.get('/todo', function(req, res) {
 });
 
 router.get('/', function(req, res) {
-   res.redirect('blog/bloglist');
+   res.redirect('blog/bloglist/1');
 });
 
 router.get('/blog', function(req, res) {
-    res.redirect('blog/bloglist');
+    res.redirect('blog/bloglist/1');
 });
 
 module.exports = router;

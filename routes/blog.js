@@ -1,4 +1,5 @@
 var express = require('express');
+var async = require('async');
 var blogBase = require('../models/blog_model');
 
 function aside(req, res, next) {
@@ -19,37 +20,50 @@ function header(req, res, next) {
 function list(req, res, next, callback) {
     var category = req.params.blogCategory;
     var condition = {category : category};
-    //var pageStart = req.params.pageStart;
-    //var page = pageStart;
-    var count = 0;
     res.data.category = category;
+    var param = {
+        condition: condition,
+        page: {
+            page: req.params.page,
+            maxPerPage: 3
+        }
+    };
 
-    blogBase.getBlogList({condition : condition}, function(err, bloglist){
-        res.data = res.data || {};
-        res.data.bloglist = bloglist;
-        res.data.category = category;
-        res.data.blogType = 'list';
-
-        count += bloglist.length;
-        bloglist.forEach(function(blog, index){
-            if(blog.showArtist){
-                blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
-                    count--;
-                    if(!err){
-                        res.data.bloglist[index] = docDetail;
-                    }
-                    if(count == 0){
-                        callback();//res.render('blog/blog_index', res.data);
+    async.series(
+        [
+            blogBase.getBlogCount(param, function(err, blogCount){
+                res.data.page = res.data.page || {};
+                res.data.page.maxPage = Math.ceil(blogCount/3);
+            }),
+            blogBase.getBlogList(param, function(err, bloglist){
+                res.data = res.data || {};
+                res.data.bloglist = bloglist;
+                res.data.category = category;
+                res.data.blogType = 'list';
+                res.data.page = res.data.page || {};
+                res.data.page.curPage = req.params.page;
+                var funclist = [];
+                bloglist.forEach(function(blog, index){
+                    if(blog.showArtist){
+                        funclist.push(function(callback){
+                            blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
+                                if(!err){
+                                    // res.data.bloglist[index] = docDetail;
+                                    blog = docDetail;
+                                }
+                                callback(null);
+                            });
+                        });
                     }
                 });
-            }else{
-                count --;
-            }
-        });
-        if(count == 0){
-            callback();//res.render('blog/blog_index', res.data);
-        }
-    });
+                async.parallel(funclist, function(err){
+                    if(!err){
+                        callback();
+                    }
+                });
+            })
+        ]
+    );
 }
 
 function detail(req, res, next, callback) {

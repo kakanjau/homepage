@@ -1,0 +1,26 @@
+.container.center-block(style='display:table; width:auto')
+    ul.pagination
+        - var minPage = (page.curPage - 2)>0 ? page.curPage - 2 : 1;
+        - var maxPage = page.maxPage < minPage+4 ? page.maxPage : minPage+4;
+        - var url = './' + (category ? (category+'/') : '');
+        
+        if minPage == 1
+            li.disabled
+                a(href='./') &laquo;
+        else
+            li
+                a(href=url + (minPage-1)) &laquo;
+
+        while minPage <= maxPage
+            if(minPage == page.curPage)
+                li.active
+                    a(href=url + minPage)= minPage++
+            else
+                li
+                    a(href=url + minPage)= minPage++
+        if maxPage == page.maxPage
+            li.disabled
+                a(href='./') &raquo;
+        else
+            li
+                a(href=url + (maxPage+1)) &raquo;

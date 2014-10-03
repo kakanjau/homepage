@@ -64,6 +64,12 @@ blogBase.prototype.getBlogList = function(arg, callback) {
     });
 };
 
+blogBase.prototype.getBlogCount = function(arg, callback) {
+    blogInfo.getBlogCount(arg, function(err, count){
+        callback(err, count);
+    });
+};
+
 blogBase.prototype.getCategorys = function(arg, callback){
     category.getCategorys(arg, function(err, docs){
         callback(err, docs);
