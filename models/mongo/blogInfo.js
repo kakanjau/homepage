@@ -42,7 +42,7 @@ bloglist.methods.getBlogList = function(arg, callback){
     }
     return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
         .skip((arg.page.page-1)*arg.page.maxPerPage + 1)
-        .limit(arg.page.maxPerPage+1)
+        .limit(arg.page.maxPerPage)
         .sort('-update_time')
         .exec(callback);
 };
