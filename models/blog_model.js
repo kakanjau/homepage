@@ -6,9 +6,12 @@
 
 var util = require('util');
 var fs = require('fs');
+var async = require('async');
+var email = require('emailjs');
 var md = require('markdown').markdown;
-var BlogInfo = require('./mongo/blogInfo');
+
 var config = require('../appconfig');
+var BlogInfo = require('./mongo/blogInfo');
 var Category = require('./mongo/category');
 var blogInfo = new BlogInfo();
 var category = new Category();
@@ -80,24 +83,74 @@ blogBase.prototype.saveBlog = function(blog, callback) {
     blog.filepath = blog.blogName;
     blog.filename = blog.blogName + '.md';
     var blogInfo = new BlogInfo(blog);
-    blogInfo.save( function(err, blogInfo){
-        if(!err){
-            var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
-            var fsPath =  dirPath + '/' + blog.filename;
-            writeFile(dirPath, fsPath, blog.text,  function(err){
-                if(err){
-                    blogInfo.remove();
+    async.waterfall(
+        [
+            function(cb){
+                blogInfo.save(function(err, blogInfo){
+                    cb(err, blogInfo);
+                });
+            },
+            function(blogInfo, cb){
+                var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
+                var fsPath =  dirPath + '/' + blog.filename;
+                writeFile(dirPath, fsPath, blog.text,  function(err){
+                    cb(err, blogInfo);
+                });
+            },
+            function(blogInfo, cb){
+                var einfo = config.evernoteInfo;
+                if(einfo && einfo.user && einfo.to){
+                    var server = email.server.connect({
+                        user: einfo.user,
+                        password: einfo.password,
+                        host: einfo.host,
+                        ssl: einfo.ssl
+                    });
+
+                    var message = {
+                        from: einfo.from,
+                        to: einfo.to,
+                        cc: einfo.cc,
+                        subject: [blog.blogName].concat(einfo.tag).join(' '),
+                        text: blog.text
+                    };
+
+                    server.send(message, function(err, message){
+                        blogInfo.message = message;
+                        cb(err, blogInfo);
+                    });
+                }else{
+                    cb(err, blogInfo);
                 }
-                if(typeof callback === 'function'){
-                    callback(err);
-                }
-            });
-        }else{
+            }
+        ],
+        function(err, blogInfo){
+            if(err && blogInfo){
+                blogInfo.remove();
+            }
             if(typeof callback === 'function'){
                 callback(err);
             }
         }
-    });
+    );
+    // blogInfo.save( function(err, blogInfo){
+    //     if(!err){
+    //         var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
+    //         var fsPath =  dirPath + '/' + blog.filename;
+    //         writeFile(dirPath, fsPath, blog.text,  function(err){
+    //             if(err){
+    //                 blogInfo.remove();
+    //             }
+    //             if(typeof callback === 'function'){
+    //                 callback(err);
+    //             }
+    //         });
+    //     }else{
+    //         if(typeof callback === 'function'){
+    //             callback(err);
+    //         }
+    //     }
+    // });
 };
 
 blogBase.prototype.updateBlog = function(_id, update, callback){

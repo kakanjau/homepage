@@ -1,5 +1,7 @@
 var express = require('express');
 var async = require('async');
+
+var config = require('../appconfig');
 var blogBase = require('../models/blog_model');
 
 function aside(req, res, next) {
@@ -25,7 +27,7 @@ function list(req, res, next, callback) {
         condition: condition,
         page: {
             page: req.params.page,
-            maxPerPage: req.params.page ? 3 : null
+            maxPerPage: req.params.page ? config.pageInfo.maxPerPage : null
         }
     };
 
@@ -33,7 +35,7 @@ function list(req, res, next, callback) {
         [
             blogBase.getBlogCount(param, function(err, blogCount){
                 res.data.page = res.data.page || {};
-                res.data.page.maxPage = Math.ceil(blogCount/3);
+                res.data.page.maxPage = Math.ceil(blogCount/config.pageInfo.maxPerPage);
             }),
             blogBase.getBlogList(param, function(err, bloglist){
                 res.data = res.data || {};
@@ -56,25 +58,6 @@ function list(req, res, next, callback) {
                 }, function(err, results){
                     callback();
                 });
-
-                // bloglist.forEach(function(blog, index){
-                //     if(blog.showArtist){
-                //         funclist.push(function(callback){
-                //             blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
-                //                 if(!err){
-                //                     // res.data.bloglist[index] = docDetail;
-                //                     blog = docDetail;
-                //                 }
-                //                 callback(null);
-                //             });
-                //         });
-                //     }
-                // });
-                // async.parallel(funclist, function(err){
-                //     if(!err){
-                //         callback();
-                //     }
-                // });
             })
         ]
     );
