@@ -42,25 +42,39 @@ function list(req, res, next, callback) {
                 res.data.blogType = 'list';
                 res.data.page = res.data.page || {};
                 res.data.page.curPage = req.params.page;
-                var funclist = [];
-                bloglist.forEach(function(blog, index){
+
+                async.map(bloglist, function(blog, acb){
                     if(blog.showArtist){
-                        funclist.push(function(callback){
-                            blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
-                                if(!err){
-                                    // res.data.bloglist[index] = docDetail;
-                                    blog = docDetail;
-                                }
-                                callback(null);
-                            });
+                        blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
+                            bloglist[bloglist.indexOf(blog)] = docDetail;
+                            acb(null, docDetail);
                         });
                     }
-                });
-                async.parallel(funclist, function(err){
-                    if(!err){
-                        callback();
+                    else{
+                        acb(null);
                     }
+                }, function(err, results){
+                    callback();
                 });
+
+                // bloglist.forEach(function(blog, index){
+                //     if(blog.showArtist){
+                //         funclist.push(function(callback){
+                //             blogBase.getBlogDetailForShow(blog._id, function(err, docDetail){
+                //                 if(!err){
+                //                     // res.data.bloglist[index] = docDetail;
+                //                     blog = docDetail;
+                //                 }
+                //                 callback(null);
+                //             });
+                //         });
+                //     }
+                // });
+                // async.parallel(funclist, function(err){
+                //     if(!err){
+                //         callback();
+                //     }
+                // });
             })
         ]
     );
