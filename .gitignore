@@ -6,6 +6,7 @@
 .project
 .metadata
 node_modules/
+public/blogs/
 bin/
 tmp/
 *.tmp
