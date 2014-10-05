@@ -19,13 +19,13 @@ module.exports = {
     },
 
     evernoteInfo : {
-        user: 'qiaoliangsmx',
-        password: 'jesusloveyx',
-        host: 'smtp.163.com',
+        user: '',
+        password: '',
+        host: '',
         ssl: true,
-        from: 'qiaoliang<qiaoliangsmx@163.com>',
-        to : 'kakanjau.9d9c626@m.yinxiang.com',
-        tag : ['#qiaokaka', '#原创']
+        from: '',
+        to : '',
+        tag : []
     },
 
     DATA_FILE_PATH : './public/blogs',
