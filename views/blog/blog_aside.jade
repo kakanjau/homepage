@@ -2,25 +2,34 @@
     Created by qiaoliang on 14-5-3.
     博客页面侧边栏内容
 div.panel
-    #blog_category.panel-default
-        .panel-heading 文章分类
-        .panel-body
-            ul.list-unstyled
-                each cate in aside.blogCategory
-                    li.text-overflow
-                        a(href='#/blog_list/'+cate.cateId) #{cate.cateName}
-    #blog_read_hot.panel-default
-        .panel-heading 阅读排行
-        .panel-body
-            ul.list-unstyled
-                each blog in aside.blogReadHot
-                    li.text-overflow
-                        a(href='#/blog_detail/'+blog.blogId) #{blog.blogName}
+    .panel-default
+        .panel-heading
+            h4: b 关于我 
+            p web开发工程师 @ 南京
+            p nodejs、angularjs
+    p
 
-    #blog_discuss_hot.panel-default
-        .panel-heading 评论排行
-        .panel-body
-            ul.list-unstyled
-                each discuss in aside.blogDiscussHot
-                    li.text-overflow
-                        a(href='#/blog_detail/'+discuss.blogId) #{discuss.blogName}
+    //
+        #blog_read_hot.panel-default
+            .panel-heading 标签
+            .panel-body
+
+    .panel-default
+        .panel-heading 相关链接
+        .panel-footer
+            -   var urls = []
+            -   urls.push({u:'http://nodejs.org', n:'nodejs'})
+            -   urls.push({u:'http://cnodejs.org', n:'cnode中文社区'})
+            -   urls.push({u:'http://www.npmjs.org', n:'nodejs npm'}) 
+            -   urls.push({u:'http://jade-lang.com', n:'jade模板'})
+            -   urls.push({u:'http://angularjs.org', n:'angularjs'})
+            -   urls.push({u:'http://www.angularjs.cn', n:'angularjs中文社区'})
+            each url in urls
+                a.list-group-item(href=url.u, target='blank') #{url.n}
+
+    p
+
+    .panel-default
+        .panel-heading 友情链接
+        .panel-footer
+            a.list-group-item(href='http://www.liangfeizc.com/', target='blank') Zealous Carrier
