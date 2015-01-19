@@ -36,6 +36,10 @@ footer {
   height : 400px;
 }
 
+code {
+  white-space: normal !important;
+}
+
 /*
 a {
   color: #00B7FF;
