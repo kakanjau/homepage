@@ -62,7 +62,9 @@ app.use(function(err, req, res, next) {
     });
 });
 
-//mongoose.connect('mongodb://' + config.root.user + ':' + config.root.password + '@' + config.dbconfig.connect + ':' + config.dbconfig.port + '/' + config.dbconfig.schema);
-mongoose.connect(config.dbconfig.connect + '/' + config.dbconfig.schema);
+var uir = 'mongodb://' + config.root.user + ':' + config.root.password 
+    + '@' + config.dbconfig.connect + '/' + config.dbconfig.schema;
+mongoose.connect('mongodb://homepage:41220403@localhost/homepage');
+// mongoose.connect(config.dbconfig.connect + '/' + config.dbconfig.schema);
 
 module.exports = app;

@@ -5,6 +5,7 @@
 *.pydevproject
 .project
 .metadata
+mongo_dump/
 node_modules/
 public/blogs/
 bin/

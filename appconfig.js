@@ -4,8 +4,8 @@
 
 module.exports = {
     root : {
-        user : '',
-        password : ''
+        user : 'homepage',
+        password : '41220403'
     },
 
     dbconfig : {
@@ -15,7 +15,7 @@ module.exports = {
     },
 
     pageInfo : {
-        maxPerPage : 3
+        maxPerPage : 5
     },
 
     evernoteInfo : {
