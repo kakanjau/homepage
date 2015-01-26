@@ -4,14 +4,14 @@
 
 module.exports = {
     root : {
-        user : 'homepage',
-        password : '41220403'
+        user : '',
+        password : ''
     },
 
     dbconfig : {
-        connect : 'localhost',
-        port : '27017',
-        schema : 'homepage'
+        connect : '',
+        port : '',
+        schema : ''
     },
 
     pageInfo : {
