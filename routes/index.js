@@ -6,9 +6,6 @@ var blog = require('./blog');
 router.all(/^\/blog[\/]?/, function(req, res, next){
 	blog.aside(req, res, next);
 });
-router.all(/^\/blog[\/]?/, function(req, res, next){
-	blog.header(req, res, next);
-});
 router.get('/blog/bloglist/:blogCategory?/:page', function(req, res, next){
 	blog.list(req, res, next, function(){
 		res.render('blog/blog_index', res.data);

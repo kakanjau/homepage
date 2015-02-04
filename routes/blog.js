@@ -3,20 +3,24 @@ var async = require('async');
 
 var config = require('../appconfig');
 var blogBase = require('../models/blog_model');
+var categoryModel = require('../models/category_model').category;
 
 function aside(req, res, next) {
     res.data = res.data || {};
     res.data.aside = blogBase.getAsideInfo();
-    next();
-}
 
-function header(req, res, next) {
     var category = req.params.blogCategory;
     res.data.category = category;
-    blogBase.getCategorys({}, function(err, categorys){
+    var categorys = categoryModel.get();
+    if(categorys.length == 0){
+        categoryModel.reload({}, function(err, categorys){
+            res.data.categorys = categorys;
+            next();
+        })
+    }else{
         res.data.categorys = categorys;
         next();
-    });
+    }
 }
 
 function list(req, res, next, callback) {
@@ -84,7 +88,6 @@ function save(req, res, next) {
 }*/
 
 exports.aside = aside;
-exports.header = header;
 exports.list = list;
 exports.detail = detail;
 //exports.save = save;

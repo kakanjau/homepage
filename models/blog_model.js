@@ -11,10 +11,8 @@ var email = require('emailjs');
 var md = require('markdown').markdown;
 
 var config = require('../appconfig');
-var BlogInfo = require('./mongo/blogInfo');
-var Category = require('./mongo/category');
-var blogInfo = new BlogInfo();
-var category = new Category();
+var blogInfo = require('./mongo/blogInfo');
+var categoryModel = require('./category_model').category;
 
 var blogBase = function() {};
 
@@ -73,31 +71,25 @@ blogBase.prototype.getBlogCount = function(arg, callback) {
     });
 };
 
-blogBase.prototype.getCategorys = function(arg, callback){
-    category.getCategorys(arg, function(err, docs){
-        callback(err, docs);
-    });
-};
-
 blogBase.prototype.saveBlog = function(blog, callback) {
     blog.filepath = blog.blogName;
     blog.filename = blog.blogName + '.md';
-    var blogInfo = new BlogInfo(blog);
+    var blogInstance = new blogInfo.Bloglist(blog);
     async.waterfall(
         [
             function(cb){
-                blogInfo.save(function(err, blogInfo){
-                    cb(err, blogInfo);
+                blogInstance.save(function(err, blogInstance){
+                    cb(err, blogInstance);
                 });
             },
-            function(blogInfo, cb){
+            function(blogInstance, cb){
                 var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
                 var fsPath =  dirPath + '/' + blog.filename;
                 writeFile(dirPath, fsPath, blog.text,  function(err){
-                    cb(err, blogInfo);
+                    cb(err, blogInstance);
                 });
             },
-            function(blogInfo, cb){
+            function(blogInstance, cb){
                 var einfo = config.evernoteInfo;
                 if(einfo && einfo.user && einfo.to){
                     var server = email.server.connect({
@@ -116,49 +108,52 @@ blogBase.prototype.saveBlog = function(blog, callback) {
                     };
 
                     server.send(message, function(err, message){
-                        blogInfo.message = message;
-                        cb(err, blogInfo);
+                        blogInstance.message = message;
+                        cb(err, blogInstance);
                     });
                 }else{
-                    cb(err, blogInfo);
+                    cb(null, blogInstance);
                 }
+            },
+            function(blogInstance, cb){
+                categoryModel.reload(function(err){
+                    cb(err, blogInstance);
+                });
             }
         ],
-        function(err, blogInfo){
-            if(err && blogInfo){
-                blogInfo.remove();
+        function(err, blogInstance){
+            if(err && blogInstance){
+                blogInstance.remove();
             }
             if(typeof callback === 'function'){
                 callback(err);
             }
         }
     );
-    // blogInfo.save( function(err, blogInfo){
-    //     if(!err){
-    //         var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
-    //         var fsPath =  dirPath + '/' + blog.filename;
-    //         writeFile(dirPath, fsPath, blog.text,  function(err){
-    //             if(err){
-    //                 blogInfo.remove();
-    //             }
-    //             if(typeof callback === 'function'){
-    //                 callback(err);
-    //             }
-    //         });
-    //     }else{
-    //         if(typeof callback === 'function'){
-    //             callback(err);
-    //         }
-    //     }
-    // });
 };
 
 blogBase.prototype.updateBlog = function(_id, update, callback){
     blogInfo.updateBlogById(_id, update, function(err, blog){
         if(!err && update.text){
-            var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
-            var fsPath = dirPath + '/' + blog.filename;
-            writeFile(dirPath, fsPath, update.text,  callback);
+            async.waterfall([
+                function(cb){
+                    var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
+                    var fsPath = dirPath + '/' + blog.filename;
+                    writeFile(dirPath, fsPath, update.text,  function(err){
+                        cb(err, blog);
+                    });
+                },
+                function(blog, cb){
+                    categoryModel.reload(function(err){
+                        cb(err, blog);
+                    });
+                }
+            ],
+            function(err){
+                if(!err && typeof callback === 'function'){
+                    callback(err);
+                }
+            });
         }else{
             if(typeof callback === 'function'){
                 callback(err);

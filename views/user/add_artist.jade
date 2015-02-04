@@ -12,10 +12,14 @@ div.container
                         input(type='text' name='_id' id='_id' style='display:none')
                 .col-lg-4
                     .input-group
-                        span.input-group-addon(for='category') category
-                        select.form-control(name='category' id='category')
-                            option(value=1) 随笔
-                            option(value=2) 技术
+                        .input-group-btn
+                            button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown' aria-expanded='false') category
+                                span.caret
+                            ul.dropdown-menu.dropdown-menu-right(role="menu")
+                                each cg in categorys
+                                    li.categoryList
+                                        a(href='#') #{cg.name}
+                        input.form-control(name='category' id='category' type='text')
             br
             .row
                 .col-lg-6

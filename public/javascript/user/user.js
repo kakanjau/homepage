@@ -34,6 +34,11 @@ $(function(){
         }
     });
 
+    $('#dialog .categoryList a').click(function(){
+        var me = $(this);
+        $('#category').val(me.text())
+    });
+
     $('#addArtistBtn').click(function(){
          $('#dialog').dialog('open');
      });

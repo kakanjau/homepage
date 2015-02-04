@@ -6,9 +6,9 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema,
     ObjectId = Schema.ObjectId;
 
-var bloglist = new Schema({
+var BlogListSchema = new Schema({
     blogId : String,
-    category : Number,
+    category : String,
     blogName : String,
     intro : String,
     create_time : {type:Date, default: Date.now},
@@ -33,57 +33,75 @@ var bloglist = new Schema({
     }]
 });
 
-bloglist.methods.getBlogList = function(arg, callback){
+var Bloglist  = mongoose.model('bloglist', BlogListSchema);
+var blogModel = {};
+
+blogModel.getBlogList = function(arg, callback){
     var condition = {};
     for(var c in arg.condition){
         if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
             condition[c] = arg.condition[c];
         }
     }
-    return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
+    return Bloglist.find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
         .skip((arg.page.page-1)*arg.page.maxPerPage)
         .limit(arg.page.maxPerPage)
         .sort('-update_time')
         .exec(callback);
 };
 
-bloglist.methods.getBlogListForMng = function(arg, callback){
+blogModel.getBlogListForMng = function(arg, callback){
     var condition = {};
     for(var c in arg.condition){
         if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
             condition[c] = arg.condition[c];
         }
     }
-    return this.model('bloglist').find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
+    return Bloglist.find(condition, '_id isShow blogId intro blogName create_time safari_count showArtist category')
         .sort('-update_time')
         .exec(callback);
 };
 
-bloglist.methods.getBlogCount = function(arg, callback){
+blogModel.getBlogCount = function(arg, callback){
     var condition = {};
     for(var c in arg.condition){
         if(arg.condition.hasOwnProperty(c) && arg.condition[c]){
             condition[c] = arg.condition[c];
         }
     }
-    return this.model('bloglist').count(condition, callback);
+    return Bloglist.count(condition, callback);
 };
 
-bloglist.methods.getBlogDetail = function(_id, callback){
-    return this.model('bloglist').findById(_id)
+blogModel.getBlogDetail = function(_id, callback){
+    return Bloglist.findById(_id)
         .exec(callback);
 };
 
-bloglist.methods.deleteBlog = function(_id, callback){
-    return this.model('bloglist').findByIdAndRemove(_id, callback);
+blogModel.deleteBlog = function(_id, callback){
+    return Bloglist.findByIdAndRemove(_id, callback);
 };
 
-bloglist.methods.updateBlogById = function(_id, update, callback){
-    return this.model('bloglist').findByIdAndUpdate(_id, update, callback);
+blogModel.updateBlogById = function(_id, update, callback){
+    return Bloglist.findByIdAndUpdate(_id, update, callback);
 };
 
-bloglist.methods.saveBlog = function(blog, callback){
+blogModel.getCategorys = function(arg, callback){
+    return Bloglist.aggregate({
+        $group: {
+            _id: {
+                name: '$category'
+            },
+            count: {
+                $sum: 1
+            }
+        }
+    }).exec(callback);
+};
+
+blogModel.saveBlog = function(blog, callback){
 
 };
 
-module.exports = mongoose.model('bloglist', bloglist);
+blogModel.Bloglist = Bloglist;
+
+module.exports = blogModel;

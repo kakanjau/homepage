@@ -5,11 +5,3 @@
         div.left
             p.navbar-brand  Welcome to
               a(href='/blog')  乔卡卡的飞仙阁
-        div.right
-            ul(role='tablist').nav.nav-tabs.navbar-default
-                if categorys
-                    each cg in categorys
-                        - var url = '/blog/bloglist/' + cg.category + '/1';
-                        - var active = (cg.category==category)?'active':'';
-                        li(role='presentation', class=active, style='margin-top: 3px;')
-                                a(href = url) #{cg.name}

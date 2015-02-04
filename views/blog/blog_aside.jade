@@ -16,6 +16,15 @@ div.panel
             .panel-body
 
     .panel-default
+        .panel-heading 文章分类
+        .panel-footer
+            each cg in categorys
+                a.list-group-item(href='/blog/bloglist/'+cg.name+'/1', target='_self') #{cg.name}
+                    span.badge #{cg.count}
+
+    P
+
+    .panel-default
         .panel-heading 相关链接
         .panel-footer
             -   var urls = []

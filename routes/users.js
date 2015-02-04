@@ -20,10 +20,6 @@ router.get(/^\/user[\/]?/, function(req, res, next){
 	blog.aside(req, res, next);
 });
 
-router.get(/^\/user[\/]?/, function(req, res, next){
-	blog.header(req, res, next);
-});
-
 router.post('/user/saveArtist', function(req, res, next){
 	var blog = {};
 	blog.category = req.body.category;
