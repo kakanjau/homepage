@@ -1,6 +1,6 @@
 $(function(){
-    var dialogHeight = $(window).height()-100;
-    var dialogWidth = $(window).width()-200;
+    var dialogHeight = $(window).height();
+    var dialogWidth = $(window).width();
     $('#dialog').dialog({
         resizable: false,
         height: dialogHeight,
