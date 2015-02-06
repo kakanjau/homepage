@@ -1,47 +1,23 @@
 $(function(){
-    var dialogHeight = $(window).height();
-    var dialogWidth = $(window).width();
-    $('#dialog').dialog({
-        resizable: false,
-        height: dialogHeight,
-        width: dialogWidth,
-        zIndex: 1050,
-        modal: true,
-        autoOpen: false,
-        buttons: {
-            "Preview" : function(){
-                $('#preview').html(markdown.toHTML($('#container textarea').val()));
-            },
-            "Submit" : function(){
-                $('#add_artist').submit();
-            },
-            "Cancel" : function(){
-                $(this).dialog("close");
-            }
-        },
-        open: function(){
-            var textareaHeight = dialogHeight-350;
-            var textareaWidth = $(this).find('#container').width(); 
-            
-            $(this).find('#introPanel textarea').css('resize', 'none').innerHeight(100).innerWidth(textareaWidth)
-            .val('');
-            $(this).find('#container textarea').css('resize', 'none').innerHeight(textareaHeight).innerWidth(textareaWidth)
-            .val('');
-            $(this).find('#preview').innerHeight(textareaHeight+100).innerWidth(textareaWidth)
-            .html('');
-
-            $(this).find('input').not(':button, :submit, :reset').val('');
-        }
-    });
-
     $('#dialog .categoryList a').click(function(){
         var me = $(this);
-        $('#category').val(me.text())
+        $('#category').val(me.text());
     });
 
-    $('#addArtistBtn').click(function(){
-         $('#dialog').dialog('open');
-     });
+    $('#dialog').on('show.bs.modal', function(e){
+        var me = $(this);
+        me.find('input').not(':button, :submit, :reset').val('');
+        me.find('textarea').val('');
+        me.find('#preview').html('').hide();
+    });
+
+    $('#dialog #saveBtn').click(function(){
+        $('#add_artist').submit();
+    });
+
+    $('#dialog #previewBtn').click(function(){
+        $('#dialog #preview').width($('#dialog #container').width()).html(markdown.toHTML($('#container textarea').val())).toggle();
+    });
 
     $('#blogList .blog-delete').click(function(){
         $.ajax({
@@ -106,7 +82,7 @@ $(function(){
             data: {_id: $(this).parents('tr').attr('id')},
             success: function(v){
                 var blog = v.blog;
-                $('#dialog').dialog('open');
+                $('#dialog').modal();
                 $('#dialog #_id').val(blog._id);
                 $('#dialog #title').val(blog.blogName);
                 $('#dialog #intro').val(blog.intro);

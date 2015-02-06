@@ -20,8 +20,32 @@ footer {
   min-height: 500px;
 }
 
+#introPanel textarea {
+  min-height: 50px;
+  resize: none;
+  width: 100%;
+}
+
+#container {
+  margin-bottom: 0px;
+}
+
 #container textarea {
-  min-height: 400px;
+  min-height: 350px;
+  resize: none;
+  width: 100%;
+  display: block;
+}
+
+#preview{
+  display: block;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  z-index: 1000;
+  overflow: auto;
 }
 
 .md_input {

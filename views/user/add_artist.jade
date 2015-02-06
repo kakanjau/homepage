@@ -1,32 +1,39 @@
 //
     Created by qiaoliang on 16-8-26.
 
-div.container
-    #dialog(title='addAtrist')
-        form.form(id="add_artist", action="/user/saveArtist", method="post")
-            .row
-                .col-lg-8
-                    .input-group
-                        span.input-group-addon(for='title') title
-                        input.form-control(type='text' required name='title' id='title')
-                        input(type='text' name='_id' id='_id' style='display:none')
-                .col-lg-4
-                    .input-group
-                        .input-group-btn
-                            button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown' aria-expanded='false') category
-                                span.caret
-                            ul.dropdown-menu.dropdown-menu-right(role="menu")
-                                each cg in categorys
-                                    li.categoryList
-                                        a(href='#') #{cg.name}
-                        input.form-control(name='category' id='category' type='text')
-            br
-            .row
-                .col-lg-6
-                    .panel(id='introPanel')
-                        textarea(id='intro' required name='intro')
-                    .panel(id='container')
-                        textarea(id='text' required name='text')
-                .col-lg-6
-                    form.form
-                        .panel-body(id='preview' style="overflow:auto;")
+#dialog.modal.fade.bs-example-modal-lg(tabindex='-1' role='dialog' aria-hidden='true' data-keyboard='false' data-backdrop='static' )
+    form.form(id="add_artist", action="/user/saveArtist", method="post")
+        .modal-dialog(style='width:100%; margin:0 auto;')
+            .modal-content
+                .modal-header
+                    button.close(type='button' data-dismiss='modal' aria-label='close')
+                        span(aria-hidden='true') &times;
+                    h4.modal-title Add artist
+                .modal-body
+                    .container
+                        .row
+                            .col-lg-8
+                                .input-group
+                                    span.input-group-addon(for='title') title
+                                    input.form-control(type='text' required name='title' id='title')
+                                    input(type='text' name='_id' id='_id' style='display:none')
+                            .col-lg-4
+                                .input-group
+                                    .input-group-btn
+                                        button.btn.btn-default.dropdown-toggle(type='button' data-toggle='dropdown' aria-expanded='false') category
+                                            span.caret
+                                        ul.dropdown-menu.dropdown-menu-right(role="menu")
+                                            each cg in categorys
+                                                li.categoryList
+                                                    a(href='#') #{cg.name}
+                                    input.form-control(name='category' id='category' type='text')
+                        br
+                        .panel(id='introPanel')
+                            textarea(id='intro' required name='intro')
+                        .panel(id='container')
+                            textarea(id='text' required name='text')
+                        .panel(id='preview' style='display:none')
+                .modal-footer(style='margin-top:0;')
+                    button.btn.btn-info(type='button' id='previewBtn') Preview
+                    button.btn.btn-primary(type='button' id='saveBtn') Save
+
