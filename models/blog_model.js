@@ -125,14 +125,18 @@ blogBase.prototype.saveBlog = function(blog, callback) {
 
 blogBase.prototype.updateBlog = function(_id, update, callback){
     blogInfo.updateBlogById(_id, update, function(err, blog){
-        if(!err && update.text){
+        if(!err){
             async.waterfall([
                 function(cb){
-                    var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
-                    var fsPath = dirPath + '/' + blog.filename;
-                    writeFile(dirPath, fsPath, update.text,  function(err){
+                    if(update.text){
+                        var dirPath = config.DATA_FILE_PATH + '/' + blog.filepath;
+                        var fsPath = dirPath + '/' + blog.filename;
+                        writeFile(dirPath, fsPath, update.text,  function(err){
+                            cb(err, blog);
+                        });
+                    }else{
                         cb(err, blog);
-                    });
+                    }
                 },
                 function(blog, cb){
                     categoryModel.reload(function(err){

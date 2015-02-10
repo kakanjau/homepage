@@ -86,16 +86,23 @@ blogModel.updateBlogById = function(_id, update, callback){
 };
 
 blogModel.getCategorys = function(arg, callback){
-    return Bloglist.aggregate({
-        $group: {
-            _id: {
-                name: '$category'
-            },
-            count: {
-                $sum: 1
+    return Bloglist.aggregate([
+        {
+            $match: {
+                isShow: true
+            }
+        },
+        {
+            $group: {
+                _id: {
+                    name: '$category'
+                },
+                count: {
+                    $sum: 1
+                }
             }
         }
-    }).exec(callback);
+    ]).exec(callback);
 };
 
 blogModel.saveBlog = function(blog, callback){
