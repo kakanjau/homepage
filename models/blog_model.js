@@ -7,7 +7,7 @@
 var util = require('util');
 var fs = require('fs');
 var async = require('async');
-var email = require('emailjs');
+var enmail = require('evernote-mail').evernoteMail;
 var md = require('markdown').markdown;
 
 var config = require('../appconfig');
@@ -170,7 +170,9 @@ blogBase.prototype.removeBlog = function(_id, callback){
         fs.rmdirSync(dirPath);
     };
 
-    blogInfo.deleteBlog(_id, callback);
+    blogInfo.deleteBlog(_id, function(err){
+        categoryModel.reload(callback);
+    });
 };
 
 module.exports = new blogBase();
