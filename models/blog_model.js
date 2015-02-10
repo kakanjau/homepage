@@ -90,24 +90,15 @@ blogBase.prototype.saveBlog = function(blog, callback) {
                 });
             },
             function(blogInstance, cb){
-                var einfo = config.evernoteInfo;
-                if(einfo && einfo.user && einfo.to){
-                    var server = email.server.connect({
-                        user: einfo.user,
-                        password: einfo.password,
-                        host: einfo.host,
-                        ssl: einfo.ssl
-                    });
+                var mailOptions = config.mailOptions;
+                var evernoteOptions = config.evernoteOptions;
+                var articleOptions = config.articleOptions;
+                if(mailOptions && mailOptions.user && mailOptions.password && evernoteOptions.mail){
+                    articleOptions.title = blog.blogName;
+                    articleOptions.notebook = blog.category;
+                    articleOptions.content = blog.text;
 
-                    var message = {
-                        from: einfo.from,
-                        to: einfo.to,
-                        cc: einfo.cc,
-                        subject: [blog.blogName].concat(einfo.tag).join(' '),
-                        text: blog.text
-                    };
-
-                    server.send(message, function(err, message){
+                    enmail(mailOptions, evernoteOptions, articleOptions, function(err, message){
                         blogInstance.message = message;
                         cb(err, blogInstance);
                     });

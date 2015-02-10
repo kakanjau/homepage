@@ -18,14 +18,20 @@ module.exports = {
         maxPerPage : 5
     },
 
-    evernoteInfo : {
+    mailOptions: {
         user: '',
         password: '',
         host: '',
         ssl: true,
-        from: '',
-        to : '',
-        tag : []
+        from: ''
+    },
+
+    evernoteOptions: {
+        mail: ''
+    },
+
+    articleOptions: {
+        tags: []
     },
 
     DATA_FILE_PATH : './public/blogs',
