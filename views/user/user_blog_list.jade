@@ -16,7 +16,7 @@ div
             each blog in bloglist
                 tr(id=blog._id)
                     td(colspan=3)
-                        a #{blog.blogName}
+                        a(style="cursor: pointer") #{blog.blogName}
                     td
                         if blog.isShow
                             button.btn.btn-default.btn-sm.blog-hidden
